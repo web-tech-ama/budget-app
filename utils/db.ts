@@ -1,23 +1,28 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { getFirestore } from "firebase/firestore";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { initializeApp } from 'firebase/app'
+import { getAuth } from 'firebase/auth'
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-    apiKey: process.env["API_KEY "],
-    authDomain: process.env["AUTH_DOMAIN "],
-    projectId: process.env["PROJECT_ID"],
-    storageBucket: process.env["STORAGE_BUCKET "],
-    messagingSenderId: process.env["MESSAGING_SENDER_ID "],
-    appId:process.env["APP_ID "],
-    measurementId: process.env["MEASUREMENT_ID"]
+    apiKey: "AIzaSyANH2N2kJi-dc4kbHxcSjSydzFgxR0R8J0",
+    authDomain: "budget-5224b.firebaseapp.com",
+    projectId: "budget-5224b",
+    storageBucket: "budget-5224b.appspot.com",
+    messagingSenderId: "834844218706",
+    appId: "1:834844218706:web:1b834f7713021885c7568b",
+    measurementId: "G-YT8XDYP0QT"
+    /*
+    apiKey: process.env.API_KEY,
+    authDomain: process.env.AUTH_DOMAIN,
+    projectId: process.env.PROJECT_ID,
+    storageBucket: process.env.STORAGE_BUCKET,
+    messagingSenderId: process.env.MESSAGING_SENDER_ID ,
+    appId:process.env.APP_ID,
+    measurementId: process.env.MEASUREMENT_ID
+
+     */
 };
 
-// Initialize Firebase
-export const app = initializeApp(firebaseConfig);
-export const analytics = getAnalytics(app);
-export const db = getFirestore(app)
+const app = initializeApp(firebaseConfig)
+
+export const auth = getAuth()
+
+

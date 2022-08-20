@@ -1,0 +1,36 @@
+@import "styles/variables.module";
+@import "styles/mixin.module";
+.modal{
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: $modal-background;
+  .modal_content{
+
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    width:100% ;
+     .modal_content_child{
+       animation: $open-modal;
+       background: $modal-content-background ;
+       width:80% ;
+     }
+  }
+  .modal_title{
+    text-align: $modal-text-align;
+    font-size: 1em;
+    font-family: inherit;
+  }
+  .modal_body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  @include animation-in;
+}
+
