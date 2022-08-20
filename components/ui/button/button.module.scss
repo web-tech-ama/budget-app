@@ -1,0 +1,19 @@
+.btn_reset{
+  outline: none;
+  border: none;
+  background: transparent;
+  font-size: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  &:disabled{
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: 0.3;
+  }
+  &:hover{
+
+  }
+}
