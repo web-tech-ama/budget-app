@@ -1,0 +1,26 @@
+.link{
+  list-style: none;
+
+
+  .link_item{
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 2em 0;
+    a{
+      display: flex;
+      align-items: center;
+      gap: 0.3em;
+      span{
+        display: block;
+      }
+    }
+
+  }
+}
+.active{
+  border-right: solid 4px black;
+  background: rgba(61, 46, 1, 0.16);
+  padding: 0.5em 0;
+  width: 100%;
+}
