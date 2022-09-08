@@ -1,11 +1,13 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import styles from '@/styles/Home.module.scss'
+import {Budget} from '../type/budget'
+import 'chart.js/auto'
+import ChartDoughNut from '../components/ui/chart/chart-doughnut'
 
 
 
-const Home: NextPage = () => {
-
+const Home: NextPage = () => { 
 
     return (
     <div className={styles.container}>
@@ -16,7 +18,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-
+        <ChartDoughNut />
       </main>
 
       <footer className={styles.footer}>
