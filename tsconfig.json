@@ -6,6 +6,7 @@
       "@/styles/*": ["/styles/*"],
       "@/utils/*": ["utils/*"],
       "@/context/*": ["context/*"],
+      "@/type/*": ["type/*"],
     },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],

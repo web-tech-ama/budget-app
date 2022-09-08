@@ -1,19 +1,21 @@
 .btn_reset{
+  font-size: 1rem;
   outline: none;
   border: none;
-  background: transparent;
+  background: rgba(248, 186, 14, 0.85);
   font-size: inherit;
   cursor: pointer;
   text-decoration: none;
   text-align: center;
-  margin: 0;
-  padding: 0;
+  margin:  .4em 0;
+  padding:1em 2em;
+  border-radius: .4em;
   &:disabled{
     cursor: not-allowed;
     pointer-events: none;
     opacity: 0.3;
   }
   &:hover{
-
+    background: rgba(161, 120, 7, 0.85);
   }
 }

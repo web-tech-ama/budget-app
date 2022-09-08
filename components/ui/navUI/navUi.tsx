@@ -12,7 +12,7 @@ const NavUi = (): JSX.Element => {
     ]
     return (
         <nav className={styles.main_menu}>
-            <div>
+            <div className={styles.main_menu_title}>
                 <h2>Budget APP</h2>
             </div>
             <ul className={styles.menu}>

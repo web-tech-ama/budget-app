@@ -38,5 +38,20 @@
 	}
   }
 }
-
+@mixin input-type($types){
+  input[type=#{$types}]{
+	padding: 6px;
+	font-size: 17px;
+	border-width: 0;
+	color: #fff;
+	width: 100%;
+	margin: 1em 0;
+	border-style: solid;
+	border-radius: 9px;
+	box-shadow: -4px -4px 0px rgba(242,208,93,.75);
+	&:focus{
+	  outline:none;
+	}
+  }
+}
 

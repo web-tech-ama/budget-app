@@ -1,17 +1,21 @@
 import '../styles/globals.scss'
 import type { AppProps } from 'next/app'
+
 import {AuthContextProvider} from "@/context/AuthUserContext";
 import {useRouter} from "next/router";
 import ProtectedRoute from "@/utils/ProtectedRoute";
-import NavUi from "@/components/ui/navUI/navUi";
 import Layout from "@/components/layout/layout";
+import {supaBase} from "@/utils/supabaseClient";
 
 const noAuthRequired = ['/', '/login', '/signup']
 function MyApp({ Component, pageProps }: AppProps) {
     const router = useRouter()
 
   return (
-      <AuthContextProvider>
+
+
+
+      <AuthContextProvider supabaseClient={supaBase}>
 
           {noAuthRequired.includes(router.pathname) ? (
               <Layout>

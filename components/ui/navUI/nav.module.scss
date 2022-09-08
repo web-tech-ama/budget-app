@@ -6,11 +6,18 @@
   left: 0;
   background: #fff6db;
   color: #111111;
+
 }
 .menu{
   display: flex;
   flex-direction: column;
-  gap: 2em;
+
+  gap: 1em;
   font-size: 1.5em;
+
+}
+.main_menu_title{
+  padding-left: 1em;
+  margin: 1.5em 0;
 
 }

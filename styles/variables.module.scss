@@ -1,6 +1,7 @@
-$primary-color: #64ff00;
-$modal-background :rgba(0,0,0,0.4);
-$modal-content-background : #fff6db;
+$primary-color: #fff6db;
+$black: #171414;
+$modal-background : rgba(0, 0, 0, 0.78);
+$modal-content-background : $primary-color;
 $open-modal: open-modal 1s ease 0s 1 normal forwards;
 $modal-text-align:center;
 $breakpoints:(

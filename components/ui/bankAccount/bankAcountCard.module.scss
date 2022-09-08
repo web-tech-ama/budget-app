@@ -1,0 +1,14 @@
+@import "styles/variables.module";
+@import "styles/mixin.module";
+.bankAccountCard{
+  background: $primary-color;
+  border-left: solid 4px rgba(248, 186, 14, 0.85);
+  border-radius: 0.2em;
+  color: $black;
+  display: inline-block;
+  padding:.8em 1.5em;
+  text-align: center;
+  .bank_card_title{
+    font-size: 2rem;
+  }
+}
