@@ -1,25 +1,22 @@
 import React from 'react';
 import { useRouter } from 'next/router'
-import LoginUi from "@/components/ui/loginUi/login";
 import {useAuth} from "@/context/AuthUserContext";
+import Modal from "../components/ui/modal/modal";
+import LoginForm from "../components/form/loginForm";
 
 
 const Login = () => {
     const router = useRouter()
-    const { user, login } = useAuth()
+    const { user, signIn } = useAuth()
     const handelLogin  = async(value:any)=>{
-        console.log(user)
-        try {
-           await login(value.email,value.password)
-            await router.push('/dashboard')
-        }catch (e) {
-            console.log(e)
-        }
-
-
+        await signIn(value.email,value.password)
+        await router.push('/dashboard')
     }
     return (
-        <LoginUi handelSubmit={handelLogin}/>
+        <Modal openModal title='Budget | Connextion !'>
+            <LoginForm handelSubmitForm={handelLogin }/>
+        </Modal>
+
 
     );
 };

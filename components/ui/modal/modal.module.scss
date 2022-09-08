@@ -19,17 +19,26 @@
        animation: $open-modal;
        background: $modal-content-background ;
        width:80% ;
+       border-radius: 1em;
      }
   }
   .modal_title{
     text-align: $modal-text-align;
-    font-size: 1em;
+    font-size: 2em;
+    color: $black;
     font-family: inherit;
   }
   .modal_body{
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+  .modal_close{
+    font-size: 2rem;
+    display: flex;
+    justify-content: end;
+    color: red;
+    cursor: pointer;
   }
   @include animation-in;
 }

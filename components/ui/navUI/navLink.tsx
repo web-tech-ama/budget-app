@@ -19,8 +19,8 @@ const NavLink:React.FC<NavLinkPros> = ({icon,link}): JSX.Element => {
     return (
         <li className={classes()}>
             <Link className={styles.link_item} href={`/${link}`} passHref>
-                <a>
-                    <span>{icon}</span>
+                <a className={styles.link_item_link}>
+                    {icon}
                     <span>{ link[0].toUpperCase()+ link.slice(1)}</span>
 
                 </a>

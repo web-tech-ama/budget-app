@@ -23,9 +23,10 @@ export  interface Operation {
 
  export  interface BankAccount {
      name :string
-     initialBudget : number
-     actualBudget : number
-     finalBudget : number
+     initial_budget : number
+     actual_budget_of_this_month : number
+     final_budget_of_this_month : number
+     user_id? : string
 
  }
 
@@ -40,5 +41,12 @@ export  interface Transfer{
 export  interface TransferType {
     name :string
 
+}
+export interface Userinfo{
+    firstname :string
+    lastname :string
+    age :Date,
+    email: string
+    user_id? :string
 }
 

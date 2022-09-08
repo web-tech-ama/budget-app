@@ -1,0 +1,17 @@
+@import "styles/variables.module";
+.profile_bare{
+  width: 100%;
+  min-height: auto;
+  background: $primary-color;
+  .profile_info{
+    display: flex;
+    justify-content: flex-end;
+    color: black;
+    div{
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+    }
+
+  }
+}

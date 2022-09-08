@@ -2,7 +2,7 @@ import React from 'react';
 import style from './button.module.scss'
 
 interface ButtonProps {
-    classes : string
+    classes? : string
     text: string
     color?: string
     round?: boolean
@@ -19,7 +19,7 @@ const Button = ({classes,color,disabled,text,children}:ButtonProps) => {
     }
 
     return (
-        <button className={classname({clas: classes, styles: style.btn_reset})} disabled={disabled}>
+        <button type='submit' className={classname({clas: classes, styles: style.btn_reset})} disabled={disabled}>
            <span>{children}</span>
             {text}
         </button>

@@ -1,0 +1,16 @@
+@import "styles/variables.module";
+@import "styles/mixin.module";
+.input {
+  @include input-type('text');
+  @include input-type('date');
+  @include input-type('number');
+  @include input-type('email');
+  @include input-type('password');
+
+}
+.input_error{
+  color: rgba(243, 50, 50, 0.82);
+  animation: $open-modal;
+}
+
+@include animation-in;
