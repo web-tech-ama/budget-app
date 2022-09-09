@@ -3,7 +3,7 @@ import Head from "next/head";
 
 import {useAuth} from "@/context/AuthUserContext";
 
-import Modal from "../components/ui/modal/modal";
+import Modal from "@/components/ui/modal/modal";
 
 import {GetStaticPropsResult} from "next";
 import {fetchData} from "@/utils/supabaseClient";
