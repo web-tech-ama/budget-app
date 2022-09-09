@@ -1,7 +1,7 @@
-import React, {forwardRef} from 'react';
+import React, {forwardRef,InputHTMLAttributes} from 'react';
 import styles from './input.module.scss'
 import {FieldError, FieldErrorsImpl, Merge} from "react-hook-form";
-interface input {
+interface input extends InputHTMLAttributes<HTMLInputElement> {
     label? :string|undefined,
     labelId?:string
     error:string|FieldError | Merge<FieldError, FieldErrorsImpl<any>>| undefined
