@@ -1,10 +1,10 @@
 .container {
-  padding: 0 2rem;
+  margin: auto 2rem;
+  padding: 2rem 0;
 }
 
 .main {
   min-height: 100vh;
-  padding: 2rem 0;
   margin-left: 270px;
 }
 
@@ -15,9 +15,11 @@
   border-top: 1px solid #eaeaea;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .footer a {
+
   display: flex;
   justify-content: center;
   align-items: center;

@@ -3,7 +3,7 @@ import UserForm from "@/components/form/userForm";
 import BankAccountForm from "@/components/form/bankAccountForm";
 import {BankAccount} from "@/type/interface";
 import {useAuth} from "@/context/AuthUserContext";
-import {insert, insertBankAccount, insertUser} from "@/utils/supabaseClient";
+import {insert} from "@/utils/supabaseClient";
 
 
 const SetupForm = () => {
@@ -28,8 +28,8 @@ const SetupForm = () => {
             user_id:user.id
 
         }
-        await insert('User',userValue)
-        await insert('Bank_account',budgetInfo)
+        await insert('user_info',userValue)
+        await insert('bank_account',budgetInfo)
 
     }
     const Switch =(params:number)=>{

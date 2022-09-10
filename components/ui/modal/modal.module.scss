@@ -9,8 +9,8 @@
   height: 100%;
   overflow: auto;
   background: $modal-background;
-  .modal_content{
 
+  .modal_content{
     display: grid;
     place-items: center;
     min-height: 100vh;
@@ -33,13 +33,14 @@
     align-items: center;
     justify-content: center;
   }
-  .modal_close{
-    font-size: 2rem;
-    display: flex;
-    justify-content: end;
-    color: red;
-    cursor: pointer;
-  }
+
   @include animation-in;
 }
 
+.modal_close{
+  font-size: 2rem;
+  display: flex;
+  justify-content: end;
+  color: red;
+  cursor: pointer;
+}

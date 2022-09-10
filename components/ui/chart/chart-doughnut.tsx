@@ -1,65 +1,47 @@
 import React from 'react';
 import type { NextPage } from 'next'
 import {Doughnut} from 'react-chartjs-2';
+import {useStore} from "@/context/StroeContext";
+import styles from '@/components/ui/chart/chartDoughnut.module.scss'
 
 const ChartDoughnut : NextPage = () => {
-    
-    const budgetByBankAccount = {
-      bankAccountA : {
-        name : 'Compte courant',
-        Budget : {
-          amount : 1500
+    const {account,loading}=useStore()
+    const colorgenerate =(data)=>{
+        let letters = '0123456789ABCDEF'
+        let color ='#'
+        color += letters[Math.floor(Math.random() * 16)];
+        for (let i = 0; i <data.length ; i++) {
+            color += i+3;
         }
-      },
-      bankAccountB : {
-        name : 'Livret A',
-        Budget : {
-          amount : 3000
-        }
-      },
-      bankAccountC : {
-        name : 'Compte courant bis',
-        Budget : {
-          amount : 500
-        }
-      }
+        return[color]
     }
-    
-    const totalAmount = budgetByBankAccount.bankAccountA.Budget.amount + budgetByBankAccount.bankAccountB.Budget.amount + budgetByBankAccount.bankAccountC.Budget.amount
 
+    const totalAmount=account?.map((item)=> [item.initial_budget]).reduce((accumulate,valeurcourante)=> Number(accumulate)  + Number(valeurcourante) )
     const data = {
-        labels: [
-          budgetByBankAccount.bankAccountA.name,
-          budgetByBankAccount.bankAccountB.name,
-          budgetByBankAccount.bankAccountC.name
-        ],
+        labels:account?.map((item)=> [item.name]),
         datasets: [{
-            data: [ 
-                budgetByBankAccount.bankAccountA.Budget.amount, 
-                budgetByBankAccount.bankAccountB.Budget.amount, 
-                budgetByBankAccount.bankAccountC.Budget.amount
-            ],
-            backgroundColor: [
-                '#FF6384',
-                '#36A2EB',
-                '#FFCE56'
-            ],
-            hoverBackgroundColor: [
-                '#FF6384',
-                '#36A2EB',
-                '#FFCE56'
-            ]
+            data:account?.map((item)=> [item.initial_budget]),
+            backgroundColor: colorgenerate(account),
+            hoverBackgroundColor: colorgenerate(account)
         }]
-      };
+    };
       return (
-        <div className='chart-doughnut'>
-            <h2>Budget total : {totalAmount} €</h2>
-            <Doughnut
-                data={data}
-                width={400}
-                height={400}
-            />
-        </div>
+          <>
+              {loading?(<h2>Loading....</h2>):(
+                  <div className={styles.chart_doughnut}>
+                      <h2>Budget total : {totalAmount} €</h2>
+                      <Doughnut
+                          data={data}
+                          width={90}
+                          height={90}
+                      />
+                  </div>
+              )
+              }
+
+          </>
+
+
       )
 }
 

@@ -21,13 +21,16 @@ const LoginForm:React.FC<LoginAndSignUpProps>  = ({handelSubmitForm}) => {
     });
     return (
         <form className={styles.login_form} onSubmit={handleSubmit(handelSubmitForm)}>
-            <Input name="email" type="email" placeholder='Votre e-mail:' {...register('email')}
+            <Input  type="email" placeholder='Votre e-mail:' {...register('email')}
                    error={errors.email?.message}/>
-            <Input name="password" type="password" placeholder='Votre mot de passe:' {...register('password')}
-                   error={errors.email?.message}/>
-            <Link href='signup'>
-                <a >Inscription</a>
-            </Link>
+            <Input  type="password" placeholder='Votre mot de passe:' {...register('password')}
+                   error={errors.password?.message} aria-invalid={true}/>
+            <div className={styles.login_form_link}>
+                <Link href='signup'>
+                    <a >Inscription</a>
+                </Link>
+            </div>
+
 
             <div>
                 <Button disabled={isSubmitting}  text='Connextion'></Button>

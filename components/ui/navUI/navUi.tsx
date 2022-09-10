@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './nav.module.scss'
 
-import {MaterialSymbolsSettingsOutline, MdiAccount, MdiHomeCircle} from "@/components/ui/navUI/navIcon";
+import {MaterialSymbolsSettingsOutline, MdiAccount, MdiHomeCircle} from "@/components/ui/icons/icons";
 import NavLink, {NavLinkPros} from "@/components/ui/navUI/navLink";
 
 const NavUi = (): JSX.Element => {

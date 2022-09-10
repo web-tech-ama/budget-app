@@ -26,28 +26,34 @@ const BankAccountHeader = ({data}:props) => {
             user_id:user.id
 
         }
-        await insert('Bank_account',budgetInfo)
+        await insert('bank_account',budgetInfo)
         setOpenModal(false)
 
     }
     return (
-        <div className={styles.bank_account_header}>
-            {data?.map(({id,initial_budget,name})=>(
-                <BankAccountCard key={id}
-                                 initial_budget={initial_budget}
-                                 name={name}
-                />
-            ))
+        < >
+            <div className={styles.bank_account_header}>
+                {data?.map(({id,initial_budget,name})=>(
+                    <BankAccountCard key={id}
+                                     initial_budget={initial_budget}
+                                     name={name}
+                    />
+                ))
 
-            }
-            <button className={styles.bank_account_header_add_btn} onClick={handelOpen}>
-                <MaterialSymbolsLibraryAdd/>
+                }
+                <div className={styles.bank_account_section_btn}>
+                    <button className={styles.bank_account_header_add_btn} onClick={handelOpen}>
+                        <MaterialSymbolsLibraryAdd/>
 
-            </button>
+                    </button>
+                </div>
+            </div>
+
+
             <Modal handelClose={handelOpen} close={true} title='Ajouter un compte' openModal={openModal}>
                 <BankAccountForm handleSubmitForm={handleSubmit}/>
             </Modal>
-        </div>
+        </>
     );
 };
 

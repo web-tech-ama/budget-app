@@ -18,14 +18,12 @@ const BankAccountForm: React.FC<FormOperation> = ({handleSubmitForm}) => {
         <>
             <form className={styles.login_form} onSubmit={handleSubmit(handleSubmitForm)}>
                 <Input
-                    type='text' name='name' placeholder="Nom du budget" {...register('name')}
+                    type='text' placeholder="Nom du budget" {...register('name')}
                     error={errors.name?.message}
                 />
                 <Input
-                    type='number' placeholder="Budget Initial " name='initial_budget' {...register('initial_budget')}
-                    error={errors.initial_budget?.message}
-
-                />
+                     type='number' placeholder="Budget Initial " {...register('initial_budget')}
+                    error={errors.initial_budget?.message}                />
                 <div>
                     <Button text='Enregistrer' disabled={isSubmitting}>
 
