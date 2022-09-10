@@ -2,13 +2,13 @@ import React from 'react';
 import style from './button.module.scss'
 
 interface ButtonProps {
-    classes? : string
+    classes? : string | undefined
     text: string
-    color?: string
-    round?: boolean
-    fullWidth?: boolean
-    disabled? : boolean
-    children?: JSX.Element[] | JSX.Element
+    color?: string | undefined
+    round?: boolean | undefined
+    fullWidth?: boolean | undefined
+    disabled? : boolean | undefined
+    children?: JSX.Element[] | JSX.Element | undefined
 }
 
 const Button = ({classes,color,disabled,text,children}:ButtonProps) => {
