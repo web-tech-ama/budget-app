@@ -2,19 +2,21 @@ import React from 'react';
 import style from './button.module.scss'
 
 interface ButtonProps {
-    classes? : string | undefined
+    classes? : string 
     text: string
-    color?: string | undefined
-    round?: boolean | undefined
-    fullWidth?: boolean | undefined
-    disabled? : boolean | undefined
-    children?: JSX.Element[] | JSX.Element | undefined
+    color?: string 
+    round?: boolean 
+    fullWidth?: boolean 
+    disabled? : boolean 
+    children?: JSX.Element[] | JSX.Element 
 }
 
 const Button = ({classes,color,disabled,text,children}:ButtonProps) => {
-    const classname=({clas,styles}: { clas: string ,styles:string })=> {
+    const classname=({clas,styles}: { clas: string | undefined ,styles:string })=> {
        let className :string[] = [styles];
-        className.push(clas)
+        if (clas != null) {
+            className.push(clas)
+        }
         return className.join('');
     }
 
