@@ -15,16 +15,16 @@ const UserForm:React.FC<FormUser> = ({handleSubmitForm}) => {
     return (
         <>
             <form className={styles.login_form}  onSubmit={handleSubmit(handleSubmitForm)}>
-                <Input type='text' placeholder='Votre prénom:' name='firstname'{...register('firstname')}
+                <Input type='text' placeholder='Votre prénom:' {...register('firstname')}
                        error={errors.firstname?.message}
                 />
-                <Input type='text' placeholder='Votre non:' name='lastname' {...register('lastname')}
+                <Input type='text' placeholder='Votre non:'  {...register('lastname')}
                        error={errors.lastname?.message}
                 />
-                <Input label='Date de naissance :' labelId='age' id='age' type='date' name='age' {...register('age')}
+                <Input label='Date de naissance :'  id='age' type='date'  {...register('age')}
                        error={errors.age?.message}
                 />
-                <Input type='email' name='email' {...register('email') } readOnly value={user?.email}
+                <Input type='email'{...register('email') } readOnly value={user?.email}
                        error={errors.email?.message}
                 />
 

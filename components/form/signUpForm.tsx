@@ -6,6 +6,7 @@ import * as Yup from "yup";
 import {LoginSchema} from "@/components/form/loginForm";
 import styles from "@/components/form/form.module.scss";
 import Button from "@/components/ui/button/Button";
+import Link from "next/link";
 const registerSchema  = LoginSchema.shape({
     passwordConfirm: Yup.string().oneOf([Yup.ref('password'),null],'passwords must match')
 })
@@ -19,12 +20,18 @@ const SignUpForm:React.FC<LoginAndSignUpProps> = ({handelSubmitForm}) => {
     });
     return (
         <form className={styles.login_form} onSubmit={handleSubmit(handelSubmitForm)}>
-            <Input name="email" type="email" placeholder='Votre e-mail:' {...register('email')}
+            <Input  type="email" placeholder='Votre e-mail:' {...register('email')}
                    error={errors.email?.message}/>
-            <Input name="password" type="password" placeholder='Votre mot de passe:' {...register('password')}
+            <Input  type="password" placeholder='Votre mot de passe:' {...register('password')}
                    error={errors.password?.message}/>
-            <Input name="password" type="password" placeholder='Confirmer votre mot de passe:' {...register('password')}
-                   error={errors.password?.message}/>
+            <Input  type="password" placeholder='Confirmer votre mot de passe:' {...register('passwordConfirm')}
+                   error={errors.passwordConfirm?.message}/>
+            <div className={styles.login_form_link}>
+                <Link href='login'>
+                    <a >Connextion</a>
+                </Link>
+            </div>
+
             <div>
                 <Button disabled={isSubmitting}  text='Inscription'></Button>
 

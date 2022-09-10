@@ -15,3 +15,15 @@
 
   }
 }
+.profile_sign_out{
+  cursor: pointer;
+  &:hover{
+    border-bottom: 2px solid black;
+    transition: border-bottom 2ms ease-in-out;
+  }
+}
+.profile_sign_in{
+  padding: 0.4em 0;
+  display: block;
+
+}

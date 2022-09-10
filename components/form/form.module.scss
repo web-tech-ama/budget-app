@@ -1,8 +1,17 @@
 @import "styles/variables.module";
+@import "styles/mixin.module";
 .login_form{
   background: $black;
-  width: 700px;
+  width: 500px;
   padding: 2em;
-  margin: 2em 0;
+  margin: 2em 0.5em;
   border-radius: 9px;
+  .login_form_link{
+    text-align: right;
+  }
+}
+@include md{
+  .login_form{
+    width: 900px;
+  }
 }

@@ -1,29 +1,38 @@
 import React from 'react';
+import 'chart.js/auto'
 import Head from "next/head";
 
-import {useAuth} from "@/context/AuthUserContext";
-
 import Modal from "@/components/ui/modal/modal";
-
-import {GetStaticPropsResult} from "next";
-import {fetchData} from "@/utils/supabaseClient";
 import SetupForm from "@/components/form/setupForm";
-import {BankAccount} from "@/type/interface";
+
 import BankAccountHeader from "@/components/ui/bankAccount/bankAccountHeader";
-interface Props {
-    userinfo: [];
-    bank_account:BankAccount[]
-}
-const Dashboard = ({userinfo,bank_account}:Props) => {
+import ChartDoughNut from "@/components/ui/chart/chart-doughnut";
+import {useStore} from "@/context/StroeContext";
+import styles from 'styles/dashboard.module.scss'
+
+const Dashboard = () => {
+    const {userData,account}=useStore()
+
+
     return (
         <div>
             <Head>
                 <title>Dashboard</title>
             </Head>
 
+            <section className={styles.bank_account_and_chart}>
 
-            <BankAccountHeader data={bank_account}/>
-            <Modal title='user info' openModal={userinfo.length !=0?false:true}>
+                {account.length !=0?(
+                        <ChartDoughNut />
+                    )
+                    :
+                    null
+                }
+                <BankAccountHeader data={account}/>
+            </section>
+
+
+            <Modal title='user info' openModal={userData.length !==0?false:true}>
                 <SetupForm/>
             </Modal>
 
@@ -33,16 +42,3 @@ const Dashboard = ({userinfo,bank_account}:Props) => {
 
 export default Dashboard;
 
-export async function getStaticProps(): Promise<GetStaticPropsResult<Props>> {
-    const userinfo = await fetchData('User','*')
-    const bank_account = await fetchData('Bank_account',`*other_table (
-      user_id
-    )`)
-    return {
-        props: {
-            userinfo,
-            bank_account
-        },
-        revalidate: 60,
-    };
-}

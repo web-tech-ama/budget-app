@@ -5,7 +5,6 @@ const BankAccountCard = ({initial_budget,name}) => {
     return (
         <div>
             <div className={styles.bank_title}>
-
                 <h4>Compte: {name}</h4>
             </div>
            <section className={styles.bankAccountCard}>

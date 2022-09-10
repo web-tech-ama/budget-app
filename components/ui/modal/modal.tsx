@@ -1,5 +1,5 @@
 import React, {MouseEventHandler} from 'react';
-import styles from './modal.module.scss'
+import styles from '@/components/ui/modal/modal.module.scss'
 import {IcBaselineClose} from "@/components/ui/icons/icons";
 
 

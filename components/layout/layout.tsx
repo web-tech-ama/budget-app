@@ -1,14 +1,21 @@
 import NavUi from "@/components/ui/navUI/navUi";
-import styles from '@/styles/Home.module.scss'
+import styles from 'styles/Home.module.scss'
 import React from "react";
-import ProfileBare from "@/components/ui/profil/profileBare";
+import ProfileBare from "@/components/ui/profile/profileBare";
 
 export default function Layout({ children }:{children: React.ReactNode}) {
     return (
         <>
             <NavUi/>
             <ProfileBare/>
-            <main className={styles.main}>{children}</main>
+            <main className={styles.main}>
+
+                <div className={styles.container}>
+                    { children }
+                </div>
+
+
+            </main>
             <footer className={styles.footer}>
 
             </footer>

@@ -1,5 +1,5 @@
 import React, {createContext, useContext, useEffect, useState} from "react";
-import {SupabaseClient} from "@supabase/supabase-js";
+import {Session, Subscription, SupabaseClient, User} from "@supabase/supabase-js";
 
 const AuthContext = createContext<any>({ user: null, session: null })
 
@@ -10,13 +10,13 @@ export interface Props {
 }
 export const AuthContextProvider =({supabaseClient: supabase,children}:Props)=>{
 
-    const [session, setSession] = useState(null)
-    const [user, setUser] = useState(null)
-    const [loading, setLoading] = useState(true)
+    const [session, setSession] = useState< Session | null>(null)
+    const [user, setUser] = useState<  User  | null>(null)
+    const [loading, setLoading] = useState<boolean>(true)
 
     useEffect(()=>{
         (async ()=>{
-            const { data:{session}, error } =  await supabase.auth.getSession()
+            const { data:{session} } =  await supabase.auth.getSession()
             setSession(session)
             setUser(session?.user ?? null)
             const { data: authListener } = supabase.auth.onAuthStateChange(async (event, session) =>{
@@ -24,18 +24,20 @@ export const AuthContextProvider =({supabaseClient: supabase,children}:Props)=>{
                 setUser(session?.user ?? null)
             })
             setLoading(false)
-            return () => {
-                authListener.subscription()
+            return () =>  {
+                // @ts-ignore
+               authListener.subscription<Subscription>();
             }
         })()
 
-    },[])
+    },[supabase.auth])
 
     const signUp = async (email: string, password: string)=>{
         const { data, error } = await supabase.auth.signUp({
             email:email,
             password:password
         })
+        return {data,error}
     }
     const signIn = async (email: string, password: string) => {
         const { data, error } = await supabase.auth.signInWithPassword({
@@ -47,6 +49,7 @@ export const AuthContextProvider =({supabaseClient: supabase,children}:Props)=>{
     }
     const signOut =async ()=>{
          const { error } = await supabase.auth.signOut()
+        return {error}
     }
     return(
         <AuthContext.Provider value={{ user, signIn, signUp,session,signOut }}>{loading ? null : children}</AuthContext.Provider>
