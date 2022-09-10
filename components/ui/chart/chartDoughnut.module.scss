@@ -1,8 +1,9 @@
 @import "styles/variables.module";
 .chart_doughnut{
-  background: $primary-color;
+  background: $neumorphism-background-black;
+  box-shadow: $neumorphism-box-shadow-black;
   padding: 2em;
-  color: $black;
+  color: $primary-color;
   display: inline-block;
   margin-bottom:2em ;
   margin-right:2em ;

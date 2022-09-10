@@ -9,7 +9,7 @@ const supaBaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 export const supaBase = createClient(supaBaseUrl, supaBaseAnonKey)
 
 
-export const fetchData = async (table:string,columns:string): Promise<({error: true} & "Received a generic string")[]>=>{
+export const fetchData = async (table:string,columns:string): Promise<any[]>=>{
 
     let {data, error}= await supaBase
         .from(table).select(columns)

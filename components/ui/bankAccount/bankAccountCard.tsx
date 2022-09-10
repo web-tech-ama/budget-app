@@ -1,7 +1,10 @@
 import React from 'react';
 import styles from './bankAcountCard.module.scss'
-
-const BankAccountCard = ({initial_budget,name}) => {
+interface BankAccountCardPros {
+    initial_budget: number,
+    name:string
+}
+const BankAccountCard = ({initial_budget,name}:BankAccountCardPros) => {
     return (
         <div>
             <div className={styles.bank_title}>

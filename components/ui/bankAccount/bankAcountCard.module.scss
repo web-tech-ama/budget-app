@@ -1,10 +1,11 @@
 @import "styles/variables.module";
 @import "styles/mixin.module";
 .bankAccountCard{
-  background: $primary-color;
+  background: $neumorphism-background-black;
+  box-shadow: $neumorphism-box-shadow-black;
   border-left: solid 4px rgba(248, 186, 14, 0.85);
   border-radius: 0.2em;
-  color: $black;
+  color: $primary-color;
   display: inline-block;
   padding:.8em 1.5em;
   text-align: center;
@@ -15,6 +16,7 @@
 }
 .bank_title{
   text-align: center;
+  color: $primary-color;
   padding-bottom:0.3rem;
   border-radius: 0.2em;
   border: solid 2px rgba(248, 186, 14, 0.85);

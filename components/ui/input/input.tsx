@@ -1,17 +1,16 @@
 import React from 'react';
 import styles from "@/components/ui/input/input.module.scss";
-type InputProps = React.DetailedHTMLProps<
-    React.InputHTMLAttributes<HTMLInputElement>,
-    HTMLInputElement
-    >;
-interface input extends InputProps{
+import {FieldError,  FieldErrorsImpl, Merge} from "react-hook-form";
+
+interface input extends React.InputHTMLAttributes<HTMLInputElement>{
     label?:string|undefined
     id?:string|undefined
-    error?: any| undefined
-    rest: React.InputHTMLAttributes<HTMLInputElement>
+    error?:   string | FieldError | Merge<FieldError, FieldErrorsImpl<any>> | undefined
+    rest?: any
 }
 
- const Input =React.forwardRef<HTMLInputElement,input>( ({label,id,error,...rest},ref)=>(
+
+const Input =React.forwardRef<HTMLInputElement,input>( ({label,id,error,...rest},ref)=>(
     <>
         { label ?(
             <div className={styles.input}>
@@ -24,7 +23,9 @@ interface input extends InputProps{
         ):( <div className={styles.input}><input  {...rest} ref={ref} /></div>)
 
         }
-        {error ? (<div className={styles.input_error}><p>{ error}</p></div>):null}
+
+        {// @ts-ignore
+            error ? (<div className={styles.input_error}><p>{ error}</p></div>):null}
     </>
 ))
 

@@ -8,16 +8,17 @@ import BankAccountForm from "@/components/form/bankAccountForm";
 import {useAuth} from "@/context/AuthUserContext";
 import {insert} from "@/utils/supabaseClient";
 
-interface props {
+interface props  {
     data: BankAccount[],
 }
+
 const BankAccountHeader = ({data}:props) => {
     const { user } = useAuth()
     const [openModal , setOpenModal]=useState(false)
     const handelOpen =()=>{
         setOpenModal(!openModal)
     }
-    const handleSubmit =async(value:BankAccount)=>{
+    const handleSubmit =async(value:any)=>{
         const budgetInfo :BankAccount={
             name: value.name,
             initial_budget : value.initial_budget,

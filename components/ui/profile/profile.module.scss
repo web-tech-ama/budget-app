@@ -6,8 +6,8 @@
   padding: 0.5em;
   margin:  0.5em 0;
   border: solid 3px rgba(248, 186, 14, 0.85);
-  background: $black;
-  color: white;
+  background: $neumorphism-background;
+  box-shadow: $neumorphism-box-shadow;
   text-align: center;
   font-size: 1rem;
 

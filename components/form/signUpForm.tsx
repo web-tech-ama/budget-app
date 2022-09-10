@@ -18,6 +18,7 @@ const SignUpForm:React.FC<LoginAndSignUpProps> = ({handelSubmitForm}) => {
         mode: "onChange",
         resolver: yupResolver(registerSchema)
     });
+
     return (
         <form className={styles.login_form} onSubmit={handleSubmit(handelSubmitForm)}>
             <Input  type="email" placeholder='Votre e-mail:' {...register('email')}

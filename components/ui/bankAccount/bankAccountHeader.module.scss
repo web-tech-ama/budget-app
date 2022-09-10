@@ -10,6 +10,7 @@
 .bank_account_header_add_btn{
   background: transparent;
   outline: none;
+  box-shadow: $neumorphism-box-shadow-black;
   padding:.5em 1.5em ;
   cursor: pointer;
   border: solid 1px rgba(248, 186, 14, 0.85);
