@@ -1,7 +1,8 @@
 @import "styles/variables.module";
 @import "styles/mixin.module";
 .login_form{
-  background: $black;
+  background: $neumorphism-background-black;
+  box-shadow: $neumorphism-box-shadow-black;
   width: 500px;
   padding: 2em;
   margin: 2em 0.5em;

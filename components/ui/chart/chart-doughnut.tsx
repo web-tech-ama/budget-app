@@ -3,10 +3,12 @@ import type { NextPage } from 'next'
 import {Doughnut} from 'react-chartjs-2';
 import {useStore} from "@/context/StroeContext";
 import styles from '@/components/ui/chart/chartDoughnut.module.scss'
+import {BankAccount} from "@/type/interface";
+
 
 const ChartDoughnut : NextPage = () => {
-    const {account,loading}=useStore()
-    const colorgenerate =(data)=>{
+    const {account,loading}:{account:BankAccount[],loading:boolean}=useStore()
+    const colorgenerate =(data:BankAccount[])=>{
         let letters = '0123456789ABCDEF'
         let color ='#'
         color += letters[Math.floor(Math.random() * 16)];
@@ -16,7 +18,9 @@ const ChartDoughnut : NextPage = () => {
         return[color]
     }
 
-    const totalAmount=account?.map((item)=> [item.initial_budget]).reduce((accumulate,valeurcourante)=> Number(accumulate)  + Number(valeurcourante) )
+    const totalAmount=account?.map((item)=> [item.initial_budget]).reduce<any>((accumulate,valeurcourante) =>{
+        return Number(accumulate)   + Number(valeurcourante)
+    },[] as Number[] )
     const data = {
         labels:account?.map((item)=> [item.name]),
         datasets: [{

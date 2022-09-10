@@ -22,6 +22,7 @@ export  interface Operation {
  }
 
  export  interface BankAccount {
+    id?:number
      name :string
      initial_budget : number
      actual_budget_of_this_month : number

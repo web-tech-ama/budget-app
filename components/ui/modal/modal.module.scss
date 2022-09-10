@@ -17,7 +17,7 @@
     width:100% ;
      .modal_content_child{
        animation: $open-modal;
-       background: $modal-content-background ;
+       background: $neumorphism-background-black ;
        width:80% ;
        border-radius: 1em;
      }
@@ -25,7 +25,7 @@
   .modal_title{
     text-align: $modal-text-align;
     font-size: 2em;
-    color: $black;
+    color: $primary-color;
     font-family: inherit;
   }
   .modal_body{

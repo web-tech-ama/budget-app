@@ -1,5 +1,8 @@
+@import "styles/variables.module";
 .link{
   list-style: none;
+  background: $neumorphism-background;
+  box-shadow: $neumorphism-box-shadow;
   .link_item{
     display: block;
     text-decoration: none;
