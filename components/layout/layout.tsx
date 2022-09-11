@@ -6,19 +6,22 @@ import ProfileBare from "@/components/ui/profile/profileBare";
 export default function Layout({ children }:{children: React.ReactNode}) {
     return (
         <>
-            <NavUi/>
-            <ProfileBare/>
-            <main className={styles.main}>
+            <div className={styles.grid_container}>
+                <NavUi/>
+                <ProfileBare/>
+                <main className={styles.main}>
 
-                <div className={styles.container}>
-                    { children }
-                </div>
+                    <div className={styles.container}>
+                        { children }
+                    </div>
 
 
-            </main>
-            <footer className={styles.footer}>
+                </main>
+                <footer className={styles.footer}>
 
-            </footer>
+                </footer>
+            </div>
+
 
         </>
     )
