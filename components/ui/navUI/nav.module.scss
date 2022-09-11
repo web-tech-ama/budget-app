@@ -1,13 +1,11 @@
 .main_menu{
   width: 250px;
   min-height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
   background: #fff6db;
   color: #111111;
 
 }
+.main_menu{ grid-area: 1 / 1 / 6 / 2; }
 .menu{
   display: flex;
   flex-direction: column;
