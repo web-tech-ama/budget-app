@@ -52,7 +52,11 @@
 	&:focus{
 	  outline:none;
 	}
-
+	&:read-only{
+		background: rgba(129, 127, 122, 0.473);
+		opacity: 0.5;
+		cursor: not-allowed;
+	}
   }
 }
 

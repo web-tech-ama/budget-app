@@ -35,7 +35,7 @@ const SetupForm = () => {
     const Switch =(params:number)=>{
         switch (params) {
             case 1:
-                return <UserForm handleSubmitForm={handelChangeStep}/>
+                return <UserForm handleSubmitForm={handelChangeStep} edit={false}/>
             case 2 :
                 return  <BankAccountForm handleSubmitForm={handleSubmit}/>
 
