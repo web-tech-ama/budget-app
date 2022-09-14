@@ -11,8 +11,21 @@
     text-align: right;
   }
 }
+.edit_form{
+  background: unset;
+  box-shadow: unset;
+  margin-top: 2em;
+}
 @include md{
   .login_form{
     width: 900px;
+  }
+}
+@include lg{
+  .edit_form{
+    div{
+      display: flex;
+      gap: 2em;
+    }
   }
 }

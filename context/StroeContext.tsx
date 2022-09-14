@@ -12,6 +12,7 @@ export const StoreContextProvider=({children}:Props)=>{
     const [account,setAccount]=useState<BankAccount[]>([])
     const [loading, setLoading] = useState(true)
     const {user}=useAuth()
+    
     useEffect(()=>{
         (async ()=>{
             if (user){
@@ -26,6 +27,7 @@ export const StoreContextProvider=({children}:Props)=>{
     useEffect(()=>{
         dataChange('bank_account','db_changes_account','INSERT',setAccount)
         dataChange('user_info','db_changes_user','INSERT',setUserData)
+        dataChange('user_info','db_update_user','UPDATE',setUserData)
     },[])
 
     return(
