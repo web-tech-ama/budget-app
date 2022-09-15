@@ -1,0 +1,29 @@
+@import "styles/variables.module";
+.alert{
+  font-size: 1.5em;
+  z-index: 9;
+  position: absolute;
+  top: 5em;
+  right: 0;
+  border-radius: .4em;
+  padding: .2em 1em ;
+  background: $primary-color;
+  border-bottom: 3px solid rgba(0, 0, 0, 0.85);
+  color: #091008;
+
+  .alert_container{
+    display: flex;
+    align-items: center;
+    gap: .4em;
+  }
+
+  .leaving {
+    animation: leave 0.5s forwards;
+  }
+
+}
+
+@keyframes leave {
+  0% { opacity: 1 }
+  100% { opacity: 0 }
+}

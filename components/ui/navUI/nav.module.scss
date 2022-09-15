@@ -1,21 +1,102 @@
-.main_menu{
-  width: 250px;
-  min-height: 100vh;
+@import "styles/variables.module";
+
+
+.sidebar{
+  height: 100vh;
+  width: 50px;
+  padding-left: 10px;
   background: #fff6db;
   color: #111111;
+  font-size: 1.9em;
+  grid-area: 1 / 1 / 10 / 2;
+  transition: width 1s ease-in-out, color 3s ease-in-out ;
+  .active{
+    border-right: solid 4px rgba(248, 186, 14, 0.85);
+    background: rgba(213, 157, 0, 0.16);
+  }
+  .main_menu{
+    margin-top: 2.5em;
+  }
+  .main_menu_title{
+    position: absolute;
+    transition:  flex 3s ease-in-out;
+    left: .1em ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    h2{
+
+      font-size: 1em;
+    }
+    .main_menu_btn{
+
+      background: transparent;
+      border: none;
+      outline: none;
+      font-size: 1em ;
+      color: $black;
+      cursor: pointer;
+    }
+  }
+  .menu{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .link{
+    list-style: none;
+    background: $neumorphism-background;
+    box-shadow: $neumorphism-box-shadow;
+    padding:.1em ;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    .link_item_link{
+      display: flex;
+      align-items: center;
+    }
+    .link_text{
+      display: none;
+    }
+    &:hover{
+      background: rgba(213, 157, 0, 0.16);
+      .mobile_link_item_link{
+        display: block;
+      }
+    }
+    .mobile_link_item_link{
+      position: absolute;
+      z-index: 20;
+      left: 51px;
+      background: rgb(243, 224, 177);
+      border-radius: .3em;
+      padding: .1em .2em;
+      display: none;
+    }
+  }
+
 
 }
-.main_menu{ grid-area: 1 / 1 / 6 / 2; }
-.menu{
-  display: flex;
-  flex-direction: column;
-
-  gap: 1em;
-  font-size: 1.5em;
-
+.sidebar.sidebar_active{
+  padding: 0;
+  width: 250px;
+  .main_menu_title{
+    flex-direction: row;
+  }
+  .link{
+    display: block;
+    width: 100%;
+    .link_text{
+      display: block;
+    }
+    &:hover{
+      .mobile_link_item_link{
+        display: none;
+      }
+    }
+  }
 }
-.main_menu_title{
-  padding-left: 1em;
-  margin: 1.5em 0;
 
-}

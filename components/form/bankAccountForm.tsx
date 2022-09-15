@@ -24,6 +24,9 @@ const BankAccountForm: React.FC<FormOperation> = ({handleSubmitForm}) => {
                 <Input
                      type='number' placeholder="Budget Initial " {...register('initial_budget')}
                     error={errors.initial_budget?.message}                />
+                <Input type='color' {...register('account_color')}
+                    error={errors.account_color?.message}
+                />
                 <div>
                     <Button text='Enregistrer' disabled={isSubmitting}>
 

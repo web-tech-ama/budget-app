@@ -10,9 +10,10 @@ const StoreContext = createContext<any>({})
 export const StoreContextProvider=({children}:Props)=>{
     const [userData,setUserData]=useState<Userinfo[]>([])
     const [account,setAccount]=useState<BankAccount[]>([])
+    const [alerts,setAlerts]=useState<{}>({})
     const [loading, setLoading] = useState(true)
     const {user}=useAuth()
-    
+
     useEffect(()=>{
         (async ()=>{
             if (user){
@@ -30,8 +31,13 @@ export const StoreContextProvider=({children}:Props)=>{
         dataChange('user_info','db_update_user','UPDATE',setUserData)
     },[])
 
+    const alertInfo=(message:string,type:string,icon:JSX.Element,active:boolean)=>{
+        setAlerts({message,type,icon,active})
+
+    }
+
     return(
-        <StoreContext.Provider value={{userData, loading,account,setAccount,setUserData}} >{loading ? null :children}</StoreContext.Provider>
+        <StoreContext.Provider value={{userData, loading,account,setAccount,setUserData,alerts,alertInfo}} >{loading ? null :children}</StoreContext.Provider>
     )
 }
 export const useStore =()=>{
