@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from "next/link";
-import styles from './link.module.scss'
+import styles from '@/components/ui/navUI/nav.module.scss'
 import { useRouter } from "next/router";
 
 export interface NavLinkPros {
@@ -18,13 +18,18 @@ const NavLink:React.FC<NavLinkPros> = ({icon,link}): JSX.Element => {
     }
     return (
         <li className={classes()}>
+
             <Link className={styles.link_item} href={`/${link}`} passHref>
                 <a className={styles.link_item_link}>
-                    {icon}
-                    <span>{ link[0].toUpperCase()+ link.slice(1)}</span>
+                    <span className={styles.link_icon} >{icon}</span>
+                    <span className={styles.link_text}>
+                        { link[0].toUpperCase()+ link.slice(1)}
+                    </span>
 
                 </a>
+
             </Link>
+            <span className={styles.mobile_link_item_link}>{ link[0].toUpperCase()+ link.slice(1)}</span>
         </li>
     );
 };

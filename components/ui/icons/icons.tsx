@@ -39,3 +39,27 @@ export function IcBaselineClose(props: SVGProps<SVGSVGElement>) {
         <svg width="1em" height="1em" viewBox="0 0 24 24" {...props}><path fill="currentColor" d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12z"></path></svg>
     )
 }
+
+export function CharmMenuHamburger(props: SVGProps<SVGSVGElement>) {
+    return (
+        <svg width="1em" height="1em" viewBox="0 0 16 16" {...props}><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M2.75 12.25h10.5m-10.5-4h10.5m-10.5-4h10.5"></path></svg>
+    )
+}
+
+export function BxBxsDashboard(props: SVGProps<SVGSVGElement>) {
+    return (
+        <svg width="1em" height="1em" viewBox="0 0 24 24" {...props}><path d="M4 13h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1zm-1 7a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v4zm10 0a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-7a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v7zm1-10h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1z" fill="currentColor"></path></svg>
+    )
+}
+
+export function BxBxsErrorCircle(props: SVGProps<SVGSVGElement>) {
+    return (
+        <svg width="1em" height="1em" viewBox="0 0 24 24" {...props}><path d="M11.953 2C6.465 2 2 6.486 2 12s4.486 10 10 10s10-4.486 10-10S17.493 2 11.953 2zM13 17h-2v-2h2v2zm0-4h-2V7h2v6z" fill="currentColor"></path></svg>
+    )
+}
+
+export function IconParkSolidSuccess(props: SVGProps<SVGSVGElement>) {
+    return (
+        <svg width="1em" height="1em" viewBox="0 0 48 48" {...props}><mask id="svgIDa"><g fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="4"><path fill="#fff" stroke="#fff" d="m24 4l5.253 3.832l6.503-.012l1.997 6.188l5.268 3.812L41 24l2.021 6.18l-5.268 3.812l-1.997 6.188l-6.503-.012L24 44l-5.253-3.832l-6.503.012l-1.997-6.188l-5.268-3.812L7 24l-2.021-6.18l5.268-3.812l1.997-6.188l6.503.012L24 4Z"></path><path stroke="#000" d="m17 24l5 5l10-10"></path></g></mask><path fill="currentColor" d="M0 0h48v48H0z" mask="url(#svgIDa)"></path></svg>
+    )
+}

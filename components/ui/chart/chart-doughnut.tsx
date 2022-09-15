@@ -8,7 +8,7 @@ import {BankAccount} from "@/type/interface";
 
 const ChartDoughnut : NextPage = () => {
     const {account,loading}:{account:BankAccount[],loading:boolean}=useStore()
-    const colorgenerate =(data:BankAccount[])=>{
+  /*  const colorgenerate =(data:BankAccount[])=>{
         let letters = '0123456789ABCDEF'
         let color ='#'
         color += letters[Math.floor(Math.random() * 16)];
@@ -16,7 +16,7 @@ const ChartDoughnut : NextPage = () => {
             color += i+3;
         }
         return[color]
-    }
+    }*/
 
     const totalAmount=account?.map((item)=> [item.initial_budget]).reduce<any>((accumulate,valeurcourante) =>{
         return Number(accumulate)   + Number(valeurcourante)
@@ -25,11 +25,12 @@ const ChartDoughnut : NextPage = () => {
         labels:account?.map((item)=> [item.name]),
         datasets: [{
             data:account?.map((item)=> [item.initial_budget]),
-            backgroundColor: colorgenerate(account),
-            hoverBackgroundColor: colorgenerate(account)
+            backgroundColor: account?.map((item):any=> [item.account_color]),
+            hoverBackgroundColor: account?.map((item):any=> [item.account_color])
         }]
     };
-      return (
+
+    return (
           <>
               {loading?(<h2>Loading....</h2>):(
                   <div className={styles.chart_doughnut}>

@@ -1,5 +1,5 @@
 import { createClient } from '@supabase/supabase-js'
-import { useState } from 'react'
+
 
 
 const supaBaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
@@ -57,9 +57,8 @@ export const update=async (table:string,payload:{})=>{
     return data ||[]
 }
 export const deleteUser =async (userId:string)=>{
-    //console.log(userId);
-    
-    const { data, error } = await supaBase
+
+    const { error } = await supaBase
         .rpc("deleteUser",userId)
     if (error) {
         console.log(error.message);
@@ -74,10 +73,10 @@ export const dataChange = (table:string,channel:string,event:string,func:Functio
             if(event === 'INSERT'){
                 func((current:any)=>[...current,payload.new])
             }
-            if(event === 'UPDATE'){                
+            if(event === 'UPDATE'){
                 func((current:any)=>[...current.map((item: { id: any }) => item.id === payload.new.id ? item = payload.new : item )])
             }
-            if(event === 'DELETE'){                
+            if(event === 'DELETE'){
                 func((current:any)=>[...current.filter((item: { id: any }) => item.id !== payload.new.id)])
             }
         })

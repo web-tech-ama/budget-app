@@ -2,17 +2,19 @@ import React, {useState} from 'react';
 import BankAccountCard from "@/components/ui/bankAccount/bankAccountCard";
 import {BankAccount} from "@/type/interface";
 import styles from './bankAccountHeader.module.scss'
-import {MaterialSymbolsLibraryAdd} from "@/components/ui/icons/icons";
+import {IconParkSolidSuccess, MaterialSymbolsLibraryAdd} from "@/components/ui/icons/icons";
 import Modal from "@/components/ui/modal/modal";
 import BankAccountForm from "@/components/form/bankAccountForm";
 import {useAuth} from "@/context/AuthUserContext";
 import {insert} from "@/utils/supabaseClient";
+import {useStore} from "@/context/StroeContext";
 
 interface props  {
     data: BankAccount[],
 }
 
 const BankAccountHeader = ({data}:props) => {
+    const {alertInfo}=useStore()
     const { user } = useAuth()
     const [openModal , setOpenModal]=useState(false)
     const handelOpen =()=>{
@@ -24,19 +26,22 @@ const BankAccountHeader = ({data}:props) => {
             initial_budget : value.initial_budget,
             actual_budget_of_this_month : value.initial_budget,
             final_budget_of_this_month : value.initial_budget,
+            account_color: value.account_color,
             user_id:user.id
 
         }
         await insert('bank_account',budgetInfo)
         setOpenModal(false)
+        alertInfo(`le compte ${value.name} est enregistré avec succès`,'success',<IconParkSolidSuccess/>,true)
 
     }
     return (
         < >
             <div className={styles.bank_account_header}>
-                {data?.map(({id,initial_budget,name})=>(
+                {data?.map(({id,initial_budget,name,account_color})=>(
                     <BankAccountCard key={id}
                                      initial_budget={initial_budget}
+                                     account_color={account_color}
                                      name={name}
                     />
                 ))
