@@ -25,7 +25,7 @@ const Alert = ({message,icon,type,isDefaultShown = false, timeout = 2500}:AlertP
         return ()=>{
             clearTimeout(timeoutId)
         }
-    },[closeAlert, isDefaultShown, timeout, timeoutId])
+    },[isDefaultShown, timeout, timeoutId])
     const classes =(cls:string,type:string | undefined)=>{
         const arrayClass =[cls ,isLeaving?'leaving':null]
         if (type){
