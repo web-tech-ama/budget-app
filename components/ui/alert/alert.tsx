@@ -7,7 +7,7 @@ interface AlertProps {
     isDefaultShown?:boolean
     timeout?:number
 }
-const Alert = ({message,icon,type,isDefaultShown = false, timeout = 4500}:AlertProps) => {
+const Alert = ({message,icon,type,isDefaultShown = false, timeout = 2500}:AlertProps) => {
     const [isShown, setIsShown] = React.useState<boolean>(isDefaultShown);
     const [isLeaving, setIsLeaving] = React.useState<boolean>(false);
     let timeoutId: any = null;
