@@ -1,7 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import styles from '@/styles/Home.module.scss'
-import Select from "@/components/ui/select/select";
 
 
 
@@ -17,7 +16,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <Select label='Select Component'/>
+
 
       </main>
 
