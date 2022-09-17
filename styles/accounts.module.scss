@@ -1,0 +1,13 @@
+@import "variables.module";
+@import "mixin.module";
+
+
+.accounts{
+  &_title{
+    margin-bottom: 2em;
+  }
+
+ &_card{
+   @include card;
+ }
+}

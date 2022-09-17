@@ -5,27 +5,29 @@ import UserForm from '@/components/form/userForm'
 import { useStore } from '@/context/StroeContext';
 import { deleteUser, update } from '@/utils/supabaseClient';
 import { useAuth } from '@/context/AuthUserContext';
+import {IconParkSolidSuccess} from "@/components/ui/icons/icons";
 
 
 const Settings = () => {
 
     const {user, signOut} = useAuth();
 
-    const {userData}=useStore();
-    
-    const handleEditProfile = (value:any) => {
+    const {userData,alertInfo}=useStore();
+
+    const handleEditProfile = async (value:any) => {
         const user = {
             ...value,
             id : userData[0].id
         }
-        update('user_info', user)
+       await update('user_info', user)
+        alertInfo(` La mise à jour de l’utilisateur ${value.firstname} ${value.lastname}, c’est effectué avec succès `,'success',<IconParkSolidSuccess/>,true)
     }
 
-    const handleDeleteProfile = () => {
-        deleteUser(user.id)
+    const handleDeleteProfile = async () => {
+        await deleteUser(user.id)
         signOut()
     }
-    
+
     return (
         <div className={styles.settings}>
             <Head>

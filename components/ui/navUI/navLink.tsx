@@ -2,6 +2,7 @@ import React from 'react';
 import Link from "next/link";
 import styles from '@/components/ui/navUI/nav.module.scss'
 import { useRouter } from "next/router";
+import {Classes} from "@/utils/classes";
 
 export interface NavLinkPros {
     icon:JSX.Element ,
@@ -10,14 +11,9 @@ export interface NavLinkPros {
 const NavLink:React.FC<NavLinkPros> = ({icon,link}): JSX.Element => {
 
     const router = useRouter();
-
-    const classes =()=>{
-        let cls =[styles.link , router.pathname == `/${link}` ? styles.active:'']
-
-        return cls.join(' ')
-    }
+    const cls =[styles.link , router.pathname == `/${link}` ? styles.active:'']
     return (
-        <li className={classes()}>
+        <li className={Classes(cls)}>
 
             <Link className={styles.link_item} href={`/${link}`} passHref>
                 <a className={styles.link_item_link}>
