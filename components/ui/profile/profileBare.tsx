@@ -15,7 +15,7 @@ const ProfileBare = () => {
                 <div>
 
                     <RiLogoutCircleFill/>
-                        <p className={styles.profile_sign_out} onClick={signOut}>Déconnextion</p>
+                        <p className={styles.profile_sign_out} onClick={signOut}>Déconnexion</p>
                     <Profile/>
                 </div>
 
@@ -23,7 +23,7 @@ const ProfileBare = () => {
                 <div>
                     <RiLoginCircleFill/>
                     <Link href='/login'>
-                        <a className={styles.profile_sign_in} >Connextion</a>
+                        <a className={styles.profile_sign_in} >Connexion</a>
                     </Link>
                 </div>
 

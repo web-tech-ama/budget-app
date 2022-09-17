@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react';
 import styles from "@/components/ui/alert/alert.module.scss";
+import {Classes} from "@/utils/classes";
 interface AlertProps {
     message:string
     icon?:any
@@ -11,6 +12,7 @@ const Alert = ({message,icon,type,isDefaultShown = false, timeout = 2500}:AlertP
     const [isShown, setIsShown] = React.useState<boolean>(isDefaultShown);
     const [isLeaving, setIsLeaving] = React.useState<boolean>(false);
     let timeoutId: any = null;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     const closeAlert=()=>{
         setIsLeaving(true);
         timeoutId = setTimeout(()=>{
@@ -25,14 +27,9 @@ const Alert = ({message,icon,type,isDefaultShown = false, timeout = 2500}:AlertP
         return ()=>{
             clearTimeout(timeoutId)
         }
-    },[isDefaultShown, timeout, timeoutId])
-    const classes =(cls:string,type:string | undefined)=>{
-        const arrayClass =[cls ,isLeaving?'leaving':null]
-        if (type){
-            arrayClass.push(type)
-        }
-        return arrayClass.join(' ')
-    }
+    },[closeAlert, isDefaultShown, timeout, timeoutId])
+    const arrayClass =[styles.alert ,isLeaving?styles.leaving:null]
+
     const alertStyle={
         borderBottom: '3px solid',
         color:type =='success' ? '#2ad500':'#c4080f',
@@ -40,7 +37,7 @@ const Alert = ({message,icon,type,isDefaultShown = false, timeout = 2500}:AlertP
     }
     return (
         isShown &&(
-            <div role='alert' style={alertStyle}  className={classes(styles.alert,type)}>
+            <div role='alert' style={alertStyle}  className={Classes(arrayClass)}>
                 <div className={styles.alert_container}>
                     <span>{icon}</span>
                     <p>{message}</p>

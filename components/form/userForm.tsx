@@ -12,17 +12,18 @@ interface FormUser {
 }
 const UserForm:React.FC<FormUser> = ({handleSubmitForm, edit, updateValues, handleDelete}) => {
     const { user } = useAuth()
+
     const { register, handleSubmit,formState:{errors,isSubmitting}} = useForm({
         mode: "onChange",
         defaultValues: updateValues
     });
 
-    
+
     return (
         <>
             <form className={edit ? styles.edit_form : styles.login_form}  onSubmit={handleSubmit(handleSubmitForm)}>
                 <Input type='text' placeholder='Votre prénom:' {...register('firstname')}
-                       error={errors.firstname?.message} 
+                       error={errors.firstname?.message}
                 />
                 <Input type='text' placeholder='Votre nom:'  {...register('lastname')}
                        error={errors.lastname?.message}
@@ -36,7 +37,7 @@ const UserForm:React.FC<FormUser> = ({handleSubmitForm, edit, updateValues, hand
 
                 <div>
                     <Button disabled={isSubmitting}  text={edit ? 'Modifier' : 'Suivant'}></Button>
-                    {edit && <Button onClick={handleDelete} color="red" text='Supprimer'></Button>} 
+                    {edit && <Button onClick={handleDelete} color="red" text='Supprimer'></Button>}
                 </div>
 
             </form>

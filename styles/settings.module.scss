@@ -1,13 +1,11 @@
 @import "styles/variables.module";
+@import "mixin.module";
 
 .settings{
  &__title{
     margin-bottom: 2em;
  }
  &__profile_info{
-    background: $neumorphism-background-black;
-    box-shadow: $neumorphism-box-shadow-black;
-    border: 1em;
-    padding: 2em 1.5em;
+    @include card;
  }
 }

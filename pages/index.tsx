@@ -17,6 +17,7 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
 
+
       </main>
 
       <footer className={styles.footer}>

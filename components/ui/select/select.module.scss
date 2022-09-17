@@ -1,0 +1,86 @@
+@import "styles/variables.module";
+.select{
+	.input{
+	  outline: none;
+	  border: none;
+	  margin: 0.4em 0;
+	  padding: 6px;
+	  border-radius: 9px;
+	  cursor: pointer;
+	  width: 100%;
+	  color: #fff;
+	  background: $black;
+	  box-shadow: -4px -4px 0px rgba(242,208,93,.75);
+	  display: flex;
+	  justify-content: space-between;
+	  align-items: center;
+	}
+  .main_option{
+	min-height: 7em;
+	height:5em;
+	background: #4f4c42;
+	display: none;
+	overflow: auto;
+	.option{
+	  padding: .5em .3em;
+	  transition: background 3ms ease-in;
+	  display: flex;
+	  justify-content: space-between;
+	  align-items: center;
+
+	  &:hover{
+		background: $primary-color;
+		color: $black;
+	  }
+	}
+
+	&::-webkit-scrollbar{
+	  width: .3em;
+	}
+	&::-webkit-scrollbar-thumb{
+	  background: $primary-color;
+	}
+  }
+}
+.select{
+  .main_option.main_option_open{
+	display: block;
+	animation: select_open 1s ease-in-out 0s 1 normal forwards;
+  }
+  .main_option.main_option_close{
+	animation: select_close 1s ease 0s 1 normal forwards;
+
+  }
+  .option.option_select{
+	background: #4f9a00;
+	color: $black;
+  }
+
+}
+@keyframes select_open {
+  0% {
+	opacity: 0;
+	transform: rotateX(-100deg);
+	transform-origin: top;
+  }
+
+  100% {
+	opacity: 1;
+	transform: rotateX(0deg);
+	transform-origin: top;
+  }
+}
+
+@keyframes select_close {
+  0% {
+	opacity: 1;
+	transform: rotateX(0deg);
+	transform-origin: top;
+  }
+
+  100% {
+	opacity: 0;
+	transform: rotateX(70deg);
+	transform-origin: top;
+  }
+}

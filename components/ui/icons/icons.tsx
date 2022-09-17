@@ -63,3 +63,16 @@ export function IconParkSolidSuccess(props: SVGProps<SVGSVGElement>) {
         <svg width="1em" height="1em" viewBox="0 0 48 48" {...props}><mask id="svgIDa"><g fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="4"><path fill="#fff" stroke="#fff" d="m24 4l5.253 3.832l6.503-.012l1.997 6.188l5.268 3.812L41 24l2.021 6.18l-5.268 3.812l-1.997 6.188l-6.503-.012L24 44l-5.253-3.832l-6.503.012l-1.997-6.188l-5.268-3.812L7 24l-2.021-6.18l5.268-3.812l1.997-6.188l6.503.012L24 4Z"></path><path stroke="#000" d="m17 24l5 5l10-10"></path></g></mask><path fill="currentColor" d="M0 0h48v48H0z" mask="url(#svgIDa)"></path></svg>
     )
 }
+
+
+export function MaterialSymbolsCheckSmallRounded(props: SVGProps<SVGSVGElement>) {
+    return (
+        <svg width="1em" height="1em" viewBox="0 0 24 24" {...props}><path fill="currentColor" d="m10 13.6l5.9-5.9q.275-.275.7-.275q.425 0 .7.275q.275.275.275.7q0 .425-.275.7l-6.6 6.6q-.3.3-.7.3q-.4 0-.7-.3l-2.6-2.6q-.275-.275-.275-.7q0-.425.275-.7q.275-.275.7-.275q.425 0 .7.275Z"></path></svg>
+    )
+}
+
+export function BiChevronExpand(props: SVGProps<SVGSVGElement>) {
+    return (
+        <svg width="1em" height="1em" viewBox="0 0 16 16" {...props}><path fill="currentColor" fillRule="evenodd" d="M3.646 9.146a.5.5 0 0 1 .708 0L8 12.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708zm0-2.292a.5.5 0 0 0 .708 0L8 3.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708z"></path></svg>
+    )
+}
