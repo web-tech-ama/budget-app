@@ -1,0 +1,20 @@
+.ask{
+    &__icon{
+        display: flex;
+        justify-content: center;
+        svg{
+            font-size: 4em;
+            color: red;
+        }
+    }
+    &__title{
+        text-align: center;
+        margin-top: 0.5em;
+        color: yellow;
+    }
+    &__actions{
+        display: flex;
+        gap: 2em;
+        margin: 0.5em;
+    }
+}

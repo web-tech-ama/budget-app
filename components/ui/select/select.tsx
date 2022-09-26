@@ -37,4 +37,4 @@ const Select = ({label,handelSelect,children,isSelect,inputValue}:SelectProps) =
     );
 };
 
-export default memo(Select);
+export default Select;

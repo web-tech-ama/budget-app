@@ -76,3 +76,10 @@ export function BiChevronExpand(props: SVGProps<SVGSVGElement>) {
         <svg width="1em" height="1em" viewBox="0 0 16 16" {...props}><path fill="currentColor" fillRule="evenodd" d="M3.646 9.146a.5.5 0 0 1 .708 0L8 12.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708zm0-2.292a.5.5 0 0 0 .708 0L8 3.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708z"></path></svg>
     )
 }
+
+
+export function MaterialSymbolsWarningRounded(props: SVGProps<SVGSVGElement>) {
+    return (
+      <svg width="1em" height="1em" viewBox="0 0 24 24" {...props}><path fill="currentColor" d="M2.725 21q-.575 0-.85-.5t0-1l9.25-16Q11.4 3 12 3t.875.5l9.25 16q.275.5 0 1t-.85.5ZM12 10q-.425 0-.712.287Q11 10.575 11 11v3q0 .425.288.712q.287.288.712.288t.713-.288Q13 14.425 13 14v-3q0-.425-.287-.713Q12.425 10 12 10Zm0 8q.425 0 .713-.288Q13 17.425 13 17t-.287-.712Q12.425 16 12 16t-.712.288Q11 16.575 11 17t.288.712Q11.575 18 12 18Z"></path></svg>
+    )
+}
