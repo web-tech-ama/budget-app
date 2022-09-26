@@ -11,7 +11,7 @@ interface FormOperation {
  handleSubmitForm :  SubmitHandler<FieldValues>
     edit?: boolean
 
-    handleDelete?: MouseEventHandler
+    handleDelete?: any
     id?: number| undefined
 }
 
@@ -24,7 +24,7 @@ const BankAccountForm: React.FC<FormOperation> =  ({handleSubmitForm,handleDelet
            if (edit){
                return account.find((v)=>v.id ==id)
            }
-        },[account, edit, id])
+        },[])
 
     });
 
@@ -33,7 +33,7 @@ const BankAccountForm: React.FC<FormOperation> =  ({handleSubmitForm,handleDelet
             reset(account.find((v)=>v.id ==id))
         }
 
-    },[account, edit, id, reset])
+    },[])
     return (
         <>
 
@@ -51,10 +51,11 @@ const BankAccountForm: React.FC<FormOperation> =  ({handleSubmitForm,handleDelet
 
                 <div>
                     <Button disabled={isSubmitting}  text={edit ? 'Modifier' : 'Enregistrer'}></Button>
-                    {edit && <Button onClick={handleDelete} color="red" text='Supprimer'></Button>}
                 </div>
 
             </form>
+            {edit && <Button onClick={() => { handleDelete(id); reset()}} color="red" text='Supprimer'></Button>}
+
         </>
     );
 };

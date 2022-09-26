@@ -37,10 +37,10 @@ const UserForm:React.FC<FormUser> = ({handleSubmitForm, edit, updateValues, hand
 
                 <div>
                     <Button disabled={isSubmitting}  text={edit ? 'Modifier' : 'Suivant'}></Button>
-                    {edit && <Button onClick={handleDelete} color="red" text='Supprimer'></Button>}
                 </div>
-
             </form>
+            {edit && <Button onClick={handleDelete} color="red" text='Supprimer'></Button>}
+
         </>
     );
 };

@@ -27,6 +27,8 @@ export const StoreContextProvider=({children}:Props)=>{
     },[user])
     useEffect(()=>{
         dataChange('bank_account','db_changes_account','INSERT',setAccount)
+        dataChange('bank_account','db_update_account','UPDATE',setAccount)
+        dataChange('bank_account','db_delete_account','DELETE',setAccount)
         dataChange('user_info','db_changes_user','INSERT',setUserData)
         dataChange('user_info','db_update_user','UPDATE',setUserData)
     },[])
