@@ -4,6 +4,11 @@ import {FieldValues, SubmitHandler, useForm} from "react-hook-form";
 import {useAuth} from "@/context/AuthUserContext";
 import styles from "@/components/form/form.module.scss";
 import Button from "@/components/ui/button/Button";
+import {
+    MaterialSymbolsEditSquareOutlineSharp,
+    MaterialSymbolsLibraryAddCheckSharp,
+    MdiDelete
+} from "@/components/ui/icons/icons";
 interface FormUser {
     handleSubmitForm :SubmitHandler<FieldValues>,
     edit: boolean,
@@ -36,10 +41,14 @@ const UserForm:React.FC<FormUser> = ({handleSubmitForm, edit, updateValues, hand
                 />
 
                 <div>
-                    <Button disabled={isSubmitting}  text={edit ? 'Modifier' : 'Suivant'}></Button>
+                    <Button disabled={isSubmitting}  text={edit ? 'Modifier' : 'Suivant'}>
+                        {edit?<MaterialSymbolsEditSquareOutlineSharp/>:<MaterialSymbolsLibraryAddCheckSharp/>}
+                    </Button>
                 </div>
             </form>
-            {edit && <Button onClick={handleDelete} color="red" text='Supprimer'></Button>}
+            {edit && <Button onClick={handleDelete} color="red" text='Supprimer'>
+                <MdiDelete/>
+            </Button>}
 
         </>
     );

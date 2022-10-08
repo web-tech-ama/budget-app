@@ -21,11 +21,4 @@
     width: 900px;
   }
 }
-@include lg{
-  .edit_form{
-    div{
-      display: flex;
-      gap: 2em;
-    }
-  }
-}
+

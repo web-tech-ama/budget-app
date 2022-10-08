@@ -12,12 +12,12 @@ import Ask from '@/components/ui/ask/ask';
 
 const Settings = () => {
 
-    const {user, signOut} = useAuth();
+    const {user,setUser} = useAuth();
 
     const {userData,alertInfo}=useStore();
 
     const [openModal, setOpenModal]= useState<boolean>(false)
-    
+
     const handleEditProfile = async (value:any) => {
         const user = {
             ...value,
@@ -30,7 +30,8 @@ const Settings = () => {
     const handleConfirm =  async() => {
         await deleteUser(user.id)
         handleCloseModal()
-        signOut()
+        setUser(null)
+
     }
 
     const handleCloseModal =() => {
@@ -52,8 +53,8 @@ const Settings = () => {
                 <UserForm handleSubmitForm={handleEditProfile} edit updateValues={userData[0]} handleDelete={handleDeleteProfile}/>
             </section>
             <Modal title="Confirmation de suppression de compte utilisateur" openModal={openModal}>
-                <Ask message="Etes-vous sur de vouloir supprimer ?" 
-                    handleCancel={handleCloseModal} 
+                <Ask message="Etes-vous sur de vouloir supprimer ?"
+                    handleCancel={handleCloseModal}
                     handleConfirm={handleConfirm}
                 />
             </Modal>

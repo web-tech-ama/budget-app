@@ -1,10 +1,15 @@
-import React, {memo, MouseEventHandler, useEffect, useMemo} from 'react';
+import React, {memo, useEffect, useMemo} from 'react';
 import {FieldValues, SubmitHandler, useForm} from "react-hook-form";
 import Input from "@/components/ui/input/input";
 import styles from "@/components/form/form.module.scss";
 import Button from "@/components/ui/button/Button";
 import {BankAccount} from "@/type/interface";
 import {useStore} from "@/context/StroeContext";
+import {
+    MaterialSymbolsEditSquareOutlineSharp,
+    MaterialSymbolsLibraryAddCheckSharp,
+    MdiDelete
+} from "@/components/ui/icons/icons";
 
 
 interface FormOperation {
@@ -50,11 +55,15 @@ const BankAccountForm: React.FC<FormOperation> =  ({handleSubmitForm,handleDelet
                 />
 
                 <div>
-                    <Button disabled={isSubmitting}  text={edit ? 'Modifier' : 'Enregistrer'}></Button>
+                    <Button disabled={isSubmitting}  text={edit ?'Modifier':'Enregistrer'}>
+                        {edit?<MaterialSymbolsEditSquareOutlineSharp/>:<MaterialSymbolsLibraryAddCheckSharp/>}
+                    </Button>
                 </div>
 
             </form>
-            {edit && <Button onClick={() => { handleDelete(id); reset()}} color="red" text='Supprimer'></Button>}
+            {edit && <Button onClick={() => { handleDelete(id); reset()}} color="red" text='Supprimer'>
+                <MdiDelete/>
+            </Button>}
 
         </>
     );

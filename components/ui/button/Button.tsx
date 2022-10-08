@@ -2,14 +2,14 @@ import React from 'react';
 import style from './button.module.scss'
 
 interface ButtonProps extends React.InputHTMLAttributes<HTMLButtonElement>{
-    classes? : string 
+    classes? : string
     text: string
-    color?: string 
-    round?: boolean 
-    fullWidth?: boolean 
-    disabled? : boolean 
+    color?: string
+    round?: boolean
+    fullWidth?: boolean
+    disabled? : boolean
     children?: JSX.Element[] | JSX.Element
-    rest?: any 
+    rest?: any
 }
 
 const Button = ({classes,color,disabled,text,children,...rest}:ButtonProps) => {
@@ -25,8 +25,12 @@ const Button = ({classes,color,disabled,text,children,...rest}:ButtonProps) => {
     }
     return (
         <button style={backgroundColor} {...rest} type='submit' className={classname({clas: classes, styles: style.btn_reset})} disabled={disabled}>
-           <span>{children}</span>
-            {text}
+
+          <div className={style.btn_container}>
+              <span>{children}</span>
+              <span>{text}</span>
+          </div>
+
         </button>
     );
 };
