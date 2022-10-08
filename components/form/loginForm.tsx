@@ -7,6 +7,7 @@ import {LoginAndSignUpProps} from "@/components/form/signUpForm";
 import styles from './form.module.scss'
 import Link from "next/link";
 import Button from "@/components/ui/button/Button";
+import {RiLoginCircleFill} from "@/components/ui/icons/icons";
 export const LoginSchema  = Yup.object().shape({
     email:Yup.string().email('Invalid email').required('Required'),
     password: Yup.string().required('Required')
@@ -33,7 +34,9 @@ const LoginForm:React.FC<LoginAndSignUpProps>  = ({handelSubmitForm}) => {
 
 
             <div>
-                <Button disabled={isSubmitting}  text='Connextion'></Button>
+                <Button disabled={isSubmitting}  text='Connexion'>
+                    <RiLoginCircleFill/>
+                </Button>
             </div>
         </form>
     );

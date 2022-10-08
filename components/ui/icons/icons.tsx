@@ -83,3 +83,36 @@ export function MaterialSymbolsWarningRounded(props: SVGProps<SVGSVGElement>) {
       <svg width="1em" height="1em" viewBox="0 0 24 24" {...props}><path fill="currentColor" d="M2.725 21q-.575 0-.85-.5t0-1l9.25-16Q11.4 3 12 3t.875.5l9.25 16q.275.5 0 1t-.85.5ZM12 10q-.425 0-.712.287Q11 10.575 11 11v3q0 .425.288.712q.287.288.712.288t.713-.288Q13 14.425 13 14v-3q0-.425-.287-.713Q12.425 10 12 10Zm0 8q.425 0 .713-.288Q13 17.425 13 17t-.287-.712Q12.425 16 12 16t-.712.288Q11 16.575 11 17t.288.712Q11.575 18 12 18Z"></path></svg>
     )
 }
+
+export function IcRoundAppRegistration(props: SVGProps<SVGSVGElement>) {
+    return (
+        <svg width="1em" height="1em" viewBox="0 0 24 24" {...props}><circle cx="12" cy="6" r="2" fill="currentColor"></circle><circle cx="6" cy="18" r="2" fill="currentColor"></circle><circle cx="6" cy="12" r="2" fill="currentColor"></circle><circle cx="6" cy="6" r="2" fill="currentColor"></circle><circle cx="18" cy="6" r="2" fill="currentColor"></circle><path fill="currentColor" d="M11 18.07v1.43c0 .28.22.5.5.5h1.4c.13 0 .26-.05.35-.15l5.83-5.83l-2.12-2.12l-5.81 5.81c-.1.1-.15.23-.15.36zM12.03 14L14 12.03V12c0-1.1-.9-2-2-2s-2 .9-2 2s.9 2 2 2h.03zm8.82-2.44l-1.41-1.41c-.2-.2-.51-.2-.71 0l-1.06 1.06l2.12 2.12l1.06-1.06c.2-.2.2-.51 0-.71z"></path></svg>
+    )
+}
+
+export function MaterialSymbolsEditSquareOutlineSharp(props: SVGProps<SVGSVGElement>) {
+    return (
+        <svg width="1em" height="1em" viewBox="0 0 24 24" {...props}><path fill="currentColor" d="M3 23.7v-18h10.925l-2 2H5v14h14v-6.95l2-2V23.7Zm9-9Zm4.175-8.425l1.425 1.4l-6.6 6.6V15.7h1.4l6.625-6.625l1.425 1.4l-7.2 7.225H9v-4.25Zm4.275 4.2l-4.275-4.2l3.95-3.95l4.2 4.275Z"></path></svg>
+    )
+}
+
+
+export function MaterialSymbolsLibraryAddCheckSharp(props: SVGProps<SVGSVGElement>) {
+    return (
+        <svg width="1em" height="1em" viewBox="0 0 24 24" {...props}><path fill="currentColor" d="m12.7 14.05l5.65-5.65l-1.4-1.45l-4.25 4.25l-2.15-2.1l-1.4 1.4ZM6 18V2h16v16Zm-4 4V6h2v14h14v2Z"></path></svg>
+    )
+}
+
+
+export function MdiDelete(props: SVGProps<SVGSVGElement>) {
+    return (
+        <svg width="1em" height="1em" viewBox="0 0 24 24" {...props}><path fill="currentColor" d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6v12Z"></path></svg>
+    )
+}
+
+
+export function DashiconsYesAlt(props: SVGProps<SVGSVGElement>) {
+    return (
+        <svg width="1em" height="1em" viewBox="0 0 20 20" {...props}><path fill="currentColor" d="M10 2c-4.42 0-8 3.58-8 8s3.58 8 8 8s8-3.58 8-8s-3.58-8-8-8zm-.615 12.66h-1.34l-3.24-4.54l1.341-1.25l2.569 2.4l5.141-5.931l1.34.94l-5.811 8.381z"></path></svg>
+    )
+}

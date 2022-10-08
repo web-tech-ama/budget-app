@@ -1,7 +1,7 @@
-import { MouseEventHandler } from "react";
+import React, { MouseEventHandler } from "react";
 import Button from "../button/Button";
 import styles from "@/components/ui/ask/ask.module.scss";
-import { MaterialSymbolsWarningRounded } from "../icons/icons";
+import {DashiconsYesAlt, IcBaselineClose, MaterialSymbolsWarningRounded} from "../icons/icons";
 
 type  AskProps ={
     message : string
@@ -20,10 +20,14 @@ const Ask = ({message, handleConfirm, handleCancel }:AskProps) => {
                 <h3>{message}</h3>
             </div>
             <div className={styles.ask__actions}>
-                <Button text="Oui" onClick={handleConfirm}></Button>
-                <Button text="Non" color="red" onClick={handleCancel}></Button>
+                <Button text="Oui" onClick={handleConfirm}>
+                    <DashiconsYesAlt/>
+                </Button>
+                <Button text="Non" color="red" onClick={handleCancel}>
+                    <IcBaselineClose/>
+                </Button>
             </div>
-            
+
         </div>
         </>
     )

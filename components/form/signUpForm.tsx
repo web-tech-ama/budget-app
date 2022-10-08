@@ -7,6 +7,7 @@ import {LoginSchema} from "@/components/form/loginForm";
 import styles from "@/components/form/form.module.scss";
 import Button from "@/components/ui/button/Button";
 import Link from "next/link";
+import {IcRoundAppRegistration} from "@/components/ui/icons/icons";
 const registerSchema  = LoginSchema.shape({
     passwordConfirm: Yup.string().oneOf([Yup.ref('password'),null],'passwords must match')
 })
@@ -29,12 +30,14 @@ const SignUpForm:React.FC<LoginAndSignUpProps> = ({handelSubmitForm}) => {
                    error={errors.passwordConfirm?.message}/>
             <div className={styles.login_form_link}>
                 <Link href='login'>
-                    <a >Connextion</a>
+                    <a >Connexion</a>
                 </Link>
             </div>
 
             <div>
-                <Button disabled={isSubmitting}  text='Inscription'></Button>
+                <Button disabled={isSubmitting}  text='Inscription'>
+                    <IcRoundAppRegistration/>
+                </Button>
 
             </div>
         </form>

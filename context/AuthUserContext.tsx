@@ -52,7 +52,7 @@ export const AuthContextProvider =({supabaseClient: supabase,children}:Props)=>{
         return {error}
     }
     return(
-        <AuthContext.Provider value={{ user, signIn, signUp,session,signOut }}>{loading ? null : children}</AuthContext.Provider>
+        <AuthContext.Provider value={{ user, signIn, signUp,session,signOut,setUser}}>{loading ? null : children}</AuthContext.Provider>
     )
 }
 
