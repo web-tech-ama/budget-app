@@ -21,7 +21,7 @@ interface FormOperation {
 }
 
 const BankAccountForm: React.FC<FormOperation> =  ({handleSubmitForm,handleDelete,edit,id}) => {
-    const {account}:{account:BankAccount[]}=useStore();
+    const {account,langJson}:{account:BankAccount[],langJson:any}=useStore();
 
     const { register, handleSubmit ,reset,formState:{errors,isSubmitting}} = useForm({
         mode: "onChange",
@@ -29,7 +29,7 @@ const BankAccountForm: React.FC<FormOperation> =  ({handleSubmitForm,handleDelet
            if (edit){
                return account.find((v)=>v.id ==id)
            }
-        },[])
+        },[edit,account,id])
 
     });
 
@@ -38,30 +38,30 @@ const BankAccountForm: React.FC<FormOperation> =  ({handleSubmitForm,handleDelet
             reset(account.find((v)=>v.id ==id))
         }
 
-    },[])
+    },[edit, account, id, reset])
     return (
         <>
 
             <form className={edit ? styles.edit_form : styles.login_form} onSubmit={handleSubmit(handleSubmitForm)}>
                 <Input
-                    type='text' placeholder="Nom du budget" {...register('name')}
+                    type='text' placeholder={langJson.form.placeholder.budgetName } {...register('name')}
                     error={errors.name?.message}
                 />
                 <Input
-                    type='number' placeholder="Budget Initial " {...register('initial_budget')}
+                    type='number' placeholder={langJson.form.placeholder.budgetInitial } {...register('initial_budget')}
                     error={errors.initial_budget?.message}                />
                 <Input type='color' {...register('account_color')}
                        error={errors.account_color?.message}
                 />
 
                 <div>
-                    <Button disabled={isSubmitting}  text={edit ?'Modifier':'Enregistrer'}>
+                    <Button disabled={isSubmitting}  text={edit ? langJson.form.label.editLabel:langJson.form.label.saveLabel}>
                         {edit?<MaterialSymbolsEditSquareOutlineSharp/>:<MaterialSymbolsLibraryAddCheckSharp/>}
                     </Button>
                 </div>
 
             </form>
-            {edit && <Button onClick={() => { handleDelete(id); reset()}} color="red" text='Supprimer'>
+            {edit && <Button onClick={() => { handleDelete(id); reset()}} color="red" text={langJson.form.label.deleteLabel }>
                 <MdiDelete/>
             </Button>}
 

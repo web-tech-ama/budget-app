@@ -9,8 +9,10 @@ import {
 
 } from "@/components/ui/icons/icons";
 import NavLink, {NavLinkPros} from "@/components/ui/navUI/navLink";
+import {useStore} from "@/context/StroeContext";
 
 const NavUi = (): JSX.Element => {
+    const {langJson} =useStore()
     const [active,setActive]=useState<boolean>(false)
     const handelActive =()=>{
         setActive(!active)
@@ -24,9 +26,9 @@ const NavUi = (): JSX.Element => {
         return arrayClass.join(' ')
     }
     const listLink: NavLinkPros[] =[
-        {icon:<BxBxsDashboard/>,link:'dashboard'},
-        {icon:<MdiAccount/>,link:'accounts'},
-        {icon:<MaterialSymbolsSettingsOutline/>,link:'settings'},
+        {icon:<BxBxsDashboard/>,link:'dashboard',label:langJson.menu.dashboard},
+        {icon:<MdiAccount/>,link:'accounts',label:langJson.menu.accounts},
+        {icon:<MaterialSymbolsSettingsOutline/>,link:'settings',label:langJson.menu.settings},
     ]
     return (
         <aside className={ classes(styles.sidebar,active? styles.sidebar_active: null)}>

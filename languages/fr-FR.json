@@ -1,0 +1,60 @@
+{
+  "form":{
+    "label":{
+      "deleteLabel":"Supprimer",
+      "editLabel":"Modifier",
+      "saveLabel":"Enregistrer",
+      "loginLabel":"Connexion",
+      "logoutLabel":"Déconnexion",
+      "registerLabel":"Inscription",
+      "nextLabel":"Suivant",
+      "dateOfBirthLabel":"Date de naissance",
+      "accountListLabel": "Liste des comptes"
+    },
+    "title": {
+      "loginTitle": "Budget | Connexion !",
+      "RegistrationTitle": "Budget | Inscription !",
+      "addAccountTitle": "Ajouter un compte",
+      "profile": "profile"
+    },
+    "placeholder":{
+      "budgetName":"Nom du budget:",
+      "budgetInitial":"Budget Initial:",
+      "loginEmail":"Votre e-mail:",
+      "loginPassword":"Votre mot de passe:",
+      "loginPasswordConfirm":"Confirmer votre mot de passe:",
+      "firstName":"Votre prénom:",
+      "lastName":"Votre nom:"
+    },
+    "message":{
+      "ask":{
+        "askDelete":"Êtes-vous sûr de vouloir supprimer ?",
+        "askSettingTitle":"Confirmation de suppression de compte utilisateur",
+        "askAccountTitle":"Confirmation de suppression de compte bancaire"
+
+      },
+      "success":{
+        "alertDelete":"La suppression du compte s’est effectué avec succès"
+      },
+      "errors":{
+        "passwordConfirm":"Les mots de passe doivent correspondre",
+        "passwordShort":"Le mot de passe est trop court - doit comporter au moins 8 caractères.",
+        "passwordMatches":"Le mot de passe ne peut contenir que des lettres latines.",
+        "InvalidEmail":"Email invalide",
+        "required":"Obligatoire"
+      }
+    }
+
+  },
+  "menu":{
+    "dashboard":"tableau de bord",
+    "accounts" :"comptes",
+    "settings":"réglages"
+  },
+  "dashboardLabel": {
+    "revenue": "Revenus",
+    "account" :"compte",
+    "totalBudget": "Budget total"
+  }
+
+}

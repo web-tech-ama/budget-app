@@ -1,0 +1,59 @@
+{
+  "form":{
+    "label":{
+      "deleteLabel":"Borrar",
+      "editLabel":"Editar",
+      "saveLabel":"Guardar",
+      "loginLabel":"Conexión",
+      "logoutLabel":"Desconexión",
+      "registerLabel":"Registro",
+      "nextLabel":"Según",
+      "dateOfBirthLabel":"Fecha de nacimiento",
+      "accountListLabel": "Lista de cuentas"
+    },
+    "title": {
+      "loginTitle": "Budget | Conexión !",
+      "RegistrationTitle": "Budget | Registro !",
+      "addAccountTitle": "Agregar una cuenta",
+      "profile": "perfil"
+    },
+    "placeholder":{
+      "budgetName":"Nombre del presupuesto:",
+      "budgetInitial":"Presupuesto inicial:",
+      "loginEmail":"Tu email:",
+      "loginPassword":"Tu contraseña:",
+      "loginPasswordConfirm":"Confirmar la contraseña:",
+      "firstName":"Tu nombre:",
+      "lastName":"Tu apellido:"
+    },
+    "message":{
+      "ask":{
+        "askDelete":"¿ Estás seguro de que quieres borrar ?",
+        "askSettingTitle":"Confirmación de la eliminación de la cuenta de usuario",
+        "askAccountTitle":"Confirmación de la eliminación de la cuenta bancaria"
+
+      },
+      "success":{
+        "alertDelete":"La cuenta ha sido eliminada con éxito"
+      },
+      "errors":{
+        "passwordConfirm":"Las contraseñas deben coincidir",
+        "passwordShort":"La contraseña es demasiado corta - debe tener al menos 8 caracteres.",
+        "passwordMatches":"La contraseña sólo puede contener letras latinas.",
+        "InvalidEmail":"Email inválido",
+        "required":"Obligatorio"
+      }
+    }
+
+  },
+  "menu":{
+    "dashboard":"salpicadero",
+    "accounts" :"cuentas",
+    "settings":"parámetros"
+  },
+  "dashboardLabel": {
+    "revenue": "Ingresos",
+    "account" :"cuentas",
+    "totalBudget": "Presupuesto total"
+  }
+}

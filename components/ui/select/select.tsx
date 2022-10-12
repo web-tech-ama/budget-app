@@ -1,4 +1,4 @@
-import React, {memo} from 'react';
+import React from 'react';
 import styles from '@/components/ui/select/select.module.scss'
 import {Classes} from "@/utils/classes";
 import {BiChevronExpand} from "@/components/ui/icons/icons";
@@ -8,12 +8,13 @@ interface SelectProps{
     children: JSX.Element[] | JSX.Element
     inputValue:string
     isSelect:boolean
+    customClass?:string
 
 
 
 
 }
-const Select = ({label,handelSelect,children,isSelect,inputValue}:SelectProps) => {
+const Select = ({label,handelSelect,children,isSelect,inputValue,customClass}:SelectProps) => {
 
     const main_option:(string|null)[] =[ styles.main_option , isSelect? styles.main_option_open:styles.main_option_close]
 
@@ -27,7 +28,7 @@ const Select = ({label,handelSelect,children,isSelect,inputValue}:SelectProps) =
                     <span><BiChevronExpand/></span>
                 </button>
             </p>
-            <nav>
+            <nav className={customClass}>
                 <ul className={Classes(main_option)}>
                     {children}
                 </ul>

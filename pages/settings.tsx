@@ -8,13 +8,14 @@ import { useAuth } from '@/context/AuthUserContext';
 import {IconParkSolidSuccess} from "@/components/ui/icons/icons";
 import Modal from '@/components/ui/modal/modal';
 import Ask from '@/components/ui/ask/ask';
+import {UpperCase} from "@/utils/upperCase";
 
 
 const Settings = () => {
 
     const {user,setUser} = useAuth();
 
-    const {userData,alertInfo}=useStore();
+    const {userData,alertInfo,langJson}=useStore();
 
     const [openModal, setOpenModal]= useState<boolean>(false)
 
@@ -45,15 +46,15 @@ const Settings = () => {
     return (
         <div className={styles.settings}>
             <Head>
-                <title>Settings</title>
+                <title>{UpperCase(langJson.menu.settings)}</title>
             </Head>
-            <h1 className={styles.settings__title}>Settings</h1>
+            <h1 className={styles.settings__title}>{UpperCase(langJson.menu.settings)}</h1>
             <section className={styles.settings__profile_info}>
-                <h2>Profile</h2>
+                <h2>{langJson.form.title.profile}</h2>
                 <UserForm handleSubmitForm={handleEditProfile} edit updateValues={userData[0]} handleDelete={handleDeleteProfile}/>
             </section>
-            <Modal title="Confirmation de suppression de compte utilisateur" openModal={openModal}>
-                <Ask message="Etes-vous sur de vouloir supprimer ?"
+            <Modal title={langJson.form.message.ask.askSettingTitle} openModal={openModal}>
+                <Ask message={langJson.form.message.ask.askDelete}
                     handleCancel={handleCloseModal}
                     handleConfirm={handleConfirm}
                 />
