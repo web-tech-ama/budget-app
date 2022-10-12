@@ -6,8 +6,10 @@
   background: $primary-color;
   .profile_info{
     display: flex;
+    gap: 0.9em;
     justify-content: flex-end;
     color: black;
+    margin-right: 0.9em;
     div{
       display: flex;
       align-items: center;
@@ -27,4 +29,8 @@
   padding: 0.4em 0;
   display: block;
 
+}
+.option_list{
+  position: absolute;
+  z-index: 15;
 }

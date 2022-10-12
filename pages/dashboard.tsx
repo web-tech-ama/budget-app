@@ -9,15 +9,16 @@ import BankAccountHeader from "@/components/ui/bankAccount/bankAccountHeader";
 import ChartDoughNut from "@/components/ui/chart/chart-doughnut";
 import {useStore} from "@/context/StroeContext";
 import styles from 'styles/dashboard.module.scss'
+import {UpperCase} from "@/utils/upperCase";
 
 const Dashboard = () => {
-    const {userData,account}=useStore()
+    const {userData,account,langJson}=useStore()
 
 
     return (
         <div>
             <Head>
-                <title>Dashboard</title>
+                <title>{UpperCase(langJson.menu.dashboard)}</title>
             </Head>
 
             <section className={styles.bank_account_and_chart}>

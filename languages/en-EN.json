@@ -1,0 +1,59 @@
+{
+  "form":{
+    "label":{
+      "deleteLabel":"Delete",
+      "editLabel":"Edit",
+      "saveLabel":"Save",
+      "loginLabel":"Connection",
+      "logoutLabel":"Disconnection",
+      "registerLabel":"Registration",
+      "nextLabel":"Next",
+      "dateOfBirthLabel":"Date of Birthday",
+      "accountListLabel": "List of accounts"
+    },
+    "title": {
+      "loginTitle": "Budget | Connection !",
+      "RegistrationTitle": "Budget | Registration !",
+      "addAccountTitle": "Add an account",
+      "profile": "profile"
+    },
+    "placeholder":{
+      "budgetName":"Budget Name:",
+      "budgetInitial":"Initial Budget:",
+      "loginEmail":"Your email:",
+      "loginPassword":"Your password:",
+      "loginPasswordConfirm":"Confirm your password:",
+      "firstName":"Your firstName:",
+      "lastName":"Your lastName:"
+    },
+    "message":{
+      "ask":{
+        "askDelete":"Are you sure you want to delete ?",
+        "askSettingTitle":"User account deletion confirmation",
+        "askAccountTitle":"Bank account deletion confirmation"
+
+      },
+      "success":{
+        "alertDelete":"The account was successfully deleted"
+      },
+      "errors":{
+        "passwordConfirm":"Passwords must match",
+        "passwordShort":"Password is too short - must be at least 8 characters long.",
+        "passwordMatches":"The password can only contain Latin letters.",
+        "InvalidEmail":"Invalid Email",
+        "required":"Required"
+      }
+    }
+
+  },
+  "menu":{
+    "dashboard":"dashboard",
+    "accounts" :"accounts",
+    "settings":"settings"
+  },
+  "dashboardLabel": {
+    "revenue": "Revenue",
+    "account" :"account",
+    "totalBudget": "Total budget"
+  }
+}

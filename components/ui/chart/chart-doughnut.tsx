@@ -7,24 +7,16 @@ import {BankAccount} from "@/type/interface";
 
 
 const ChartDoughnut : NextPage = () => {
-    const {account,loading}:{account:BankAccount[],loading:boolean}=useStore()
-  /*  const colorgenerate =(data:BankAccount[])=>{
-        let letters = '0123456789ABCDEF'
-        let color ='#'
-        color += letters[Math.floor(Math.random() * 16)];
-        for (let i = 0; i <data.length ; i++) {
-            color += i+3;
-        }
-        return[color]
-    }*/
+    const {account,loading,langJson}:{account:BankAccount[],loading:boolean,langJson:any}=useStore()
 
-    const totalAmount=account?.map((item)=> [item.initial_budget]).reduce<any>((accumulate,valeurcourante) =>{
-        return Number(accumulate)   + Number(valeurcourante)
+
+    const totalAmount=account?.map((item)=> [Number(item.initial_budget).toFixed(2)]).reduce<any>((accumulate,valeurcourante) =>{
+        return Number(accumulate)  + Number(valeurcourante)
     },[] as Number[] )
     const data = {
         labels:account?.map((item)=> [item.name]),
         datasets: [{
-            data:account?.map((item)=> [item.initial_budget]),
+            data:account?.map((item)=> [Number(item.initial_budget).toFixed(2)]),
             backgroundColor: account?.map((item):any=> [item.account_color]),
             hoverBackgroundColor: account?.map((item):any=> [item.account_color])
         }]
@@ -34,7 +26,7 @@ const ChartDoughnut : NextPage = () => {
           <>
               {loading?(<h2>Loading....</h2>):(
                   <div className={styles.chart_doughnut}>
-                      <h2>Budget total : {totalAmount} €</h2>
+                      <h2>{langJson.dashboardLabel.totalBudget}: {Number(totalAmount).toFixed(2)} €</h2>
                       <Doughnut
                           data={data}
                           width={90}

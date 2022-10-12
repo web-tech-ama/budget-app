@@ -12,19 +12,35 @@ export const StoreContextProvider=({children}:Props)=>{
     const [account,setAccount]=useState<BankAccount[]>([])
     const [alerts,setAlerts]=useState<{}>({})
     const [loading, setLoading] = useState(true)
+    const [selectLang, setSelectLang] = useState<string>('')
+    const [langJson,setLangJson]=useState({})
+
     const {user}=useAuth()
 
     useEffect(()=>{
         (async ()=>{
+            if (selectLang !==''){
+                localStorage.setItem('lang',selectLang)
+            }
+            let localLang = localStorage.getItem('lang')
+
             if (user){
                 const userinfo=  await fetchData('user_info','*')
                 const bank_account = await fetchData('bank_account',`*`)
                 setUserData(userinfo)
                 setAccount(bank_account)
             }
+            if (localLang ){
+                setSelectLang(localLang)
+            }
+
+            setLangJson(await multilingual() )
+
+
+
             setLoading(false)
         })()
-    },[user])
+    },[user,selectLang])
     useEffect(()=>{
         dataChange('bank_account','db_changes_account','INSERT',setAccount)
         dataChange('bank_account','db_update_account','UPDATE',setAccount)
@@ -37,9 +53,26 @@ export const StoreContextProvider=({children}:Props)=>{
         setAlerts({message,type,icon,active})
 
     }
+    const multilingual= async ()=>{
+        let lang
+        switch (selectLang) {
+            case 'FR':
+                return lang = await  import('languages/fr-FR.json')
 
+            case 'EN':
+                return  lang = await  import('languages/en-EN.json')
+
+            case 'ESP':
+                return lang = await  import('languages/esp-ESP.json')
+
+            default:
+                lang = await  import('languages/fr-FR.json')
+        }
+        return lang.default
+
+    }
     return(
-        <StoreContext.Provider value={{userData, loading,account,setAccount,setUserData,alerts,alertInfo}} >{loading ? null :children}</StoreContext.Provider>
+        <StoreContext.Provider value={{userData, loading,account,setAccount,setUserData,alerts,alertInfo,langJson,selectLang, setSelectLang}} >{loading ? null :children}</StoreContext.Provider>
     )
 }
 export const useStore =()=>{

@@ -14,7 +14,7 @@ interface props  {
 }
 
 const BankAccountHeader = ({data}:props) => {
-    const {alertInfo}=useStore()
+    const {alertInfo,langJson}=useStore()
     const { user } = useAuth()
     const [openModal , setOpenModal]=useState(false)
     const handelOpen =()=>{
@@ -56,7 +56,7 @@ const BankAccountHeader = ({data}:props) => {
             </div>
 
 
-            <Modal handelClose={handelOpen} close={true} title='Ajouter un compte' openModal={openModal}>
+            <Modal handelClose={handelOpen} close={true} title={langJson.form.title.addAccountTitle } openModal={openModal}>
                 <BankAccountForm handleSubmitForm={handleSubmit}/>
             </Modal>
         </>
