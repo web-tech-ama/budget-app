@@ -3,9 +3,11 @@ import { useRouter } from 'next/router'
 import {useAuth} from "@/context/AuthUserContext";
 import Modal from "../components/ui/modal/modal";
 import LoginForm from "../components/form/loginForm";
+import {useStore} from "@/context/StroeContext";
 
 
 const Login = () => {
+    const {langJson}=useStore()
     const router = useRouter()
     const { user, signIn } = useAuth()
     const handelLogin  = async(value:any)=>{
