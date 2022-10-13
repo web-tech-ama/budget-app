@@ -7,7 +7,7 @@ import {useStore} from "@/context/StroeContext";
 
 
 const Login = () => {
-    //const {langJson}=useStore()
+    const {langJson}=useStore()
     const router = useRouter()
     const { user, signIn } = useAuth()
     const handelLogin  = async(value:any)=>{
@@ -15,7 +15,7 @@ const Login = () => {
         await router.push('/dashboard')
     }
     return (
-        <Modal openModal title='Budget | Connexion !'>
+        <Modal openModal title={langJson.form.title.loginTitle}>
             <LoginForm handelSubmitForm={handelLogin }/>
         </Modal>
 
