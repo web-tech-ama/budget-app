@@ -5,6 +5,7 @@ import Modal from "@/components/ui/modal/modal";
 import SignUpForm from "@/components/form/signUpForm";
 
 const Signup = () => {
+     const {langJson}=useStore()
     const router = useRouter()
     const {signUp } = useAuth()
 
@@ -15,7 +16,7 @@ const Signup = () => {
 
     }
     return (
-        <Modal openModal title='Budget | Inscription !'>
+        <Modal openModal title={langJson.form.title.RegistrationTitle}>
             <SignUpForm
                 handelSubmitForm={handelSingUp}
             />
