@@ -1,6 +1,7 @@
 import React from 'react';
 import {useRouter} from "next/router";
 import {useAuth} from "@/context/AuthUserContext";
+import { useStore } from '@/context/StroeContext';
 import Modal from "@/components/ui/modal/modal";
 import SignUpForm from "@/components/form/signUpForm";
 
