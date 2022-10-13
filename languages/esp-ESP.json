@@ -47,13 +47,13 @@
 
   },
   "menu":{
-    "dashboard":"salpicadero",
+    "dashboard":"tablero",
     "accounts" :"cuentas",
     "settings":"parámetros"
   },
   "dashboardLabel": {
     "revenue": "Ingresos",
-    "account" :"cuentas",
+    "account" :"cuenta",
     "totalBudget": "Presupuesto total"
   }
 }
