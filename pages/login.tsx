@@ -15,7 +15,7 @@ const Login = () => {
         await router.push('/dashboard')
     }
     return (
-        <Modal openModal title='Budget | Connexion'>
+        <Modal openModal title='Budget | Connexion !'>
             <LoginForm handelSubmitForm={handelLogin }/>
         </Modal>
 
