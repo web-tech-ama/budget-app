@@ -32,7 +32,7 @@ const BankAccountHeader = ({data}:props) => {
         }
         await insert('bank_account',budgetInfo)
         setOpenModal(false)
-        alertInfo(`le compte ${value.name} est enregistré avec succès`,'success',<IconParkSolidSuccess/>,true)
+        alertInfo(`${langJson.form.message.success.alertAddAccountPart1} ${value.name} ${langJson.form.message.success.alertAddAccountPart2}`,'success',<IconParkSolidSuccess/>,true)
 
     }
     return (
