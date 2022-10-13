@@ -15,7 +15,8 @@
       "loginTitle": "Budget | Connexion !",
       "RegistrationTitle": "Budget | Inscription !",
       "addAccountTitle": "Ajouter un compte",
-      "profile": "profil"
+      "profile": "profil",
+      "userInfo": "Informations de l'utilisateur"
     },
     "placeholder":{
       "budgetName":"Nom du budget:",
@@ -34,7 +35,13 @@
 
       },
       "success":{
-        "alertDelete":"La suppression du compte s’est effectué avec succès"
+        "alertAddAccountPart1": "Le compte",
+        "alertAddAccountPart2": "s'est enregistré avec succès",
+        "alertDeleteAccount":"La suppression du compte s’est effectué avec succès",
+        "alertEditAccountPart1": "La mise à jour du compte",
+        "alertEditAccountPart2": "s'est effectué avec succès",
+        "alertEditUserPart1": "La mise à jour de l'utilisateur",
+        "alertEditUserPart2": "s'est effectué avec succès"
       },
       "errors":{
         "passwordConfirm":"Les mots de passe doivent correspondre",

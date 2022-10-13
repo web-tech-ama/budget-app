@@ -25,7 +25,7 @@ const Settings = () => {
             id : userData[0].id
         }
        await update('user_info', user)
-        alertInfo(` La mise à jour de l’utilisateur ${value.firstname} ${value.lastname}, c’est effectué avec succès `,'success',<IconParkSolidSuccess/>,true)
+        alertInfo(` ${langJson.form.message.success.alertEditUserPart1} ${value.firstname} ${value.lastname}, ${langJson.form.message.success.alertEditUserPart2}  `,'success',<IconParkSolidSuccess/>,true)
     }
 
     const handleConfirm =  async() => {

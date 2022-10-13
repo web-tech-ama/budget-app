@@ -33,7 +33,7 @@ const Dashboard = () => {
             </section>
 
 
-            <Modal title="Informations de l'utilisateur" openModal={userData.length !==0?false:true}>
+            <Modal title={langJson.form.title.userInfo} openModal={userData.length !==0?false:true}>
                 <SetupForm/>
             </Modal>
 

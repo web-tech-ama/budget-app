@@ -15,7 +15,8 @@
       "loginTitle": "Budget | Connection !",
       "RegistrationTitle": "Budget | Registration !",
       "addAccountTitle": "Add an account",
-      "profile": "profile"
+      "profile": "profile",
+      "userInfo": "User information"
     },
     "placeholder":{
       "budgetName":"Budget Name:",
@@ -34,7 +35,13 @@
 
       },
       "success":{
-        "alertDelete":"The account was successfully deleted"
+        "alertAddAccountPart1": "The account",
+        "alertAddAccountPart2": "has been successfully registered",
+        "alertDeleteAccount":"The account was successfully deleted",
+        "alertEditAccountPart1": "The account",
+        "alertEditAccountPart2": "has been successfully updated",
+        "alertEditUserPart1": "The user",
+        "alertEditUserPart2": "has been updated"
       },
       "errors":{
         "passwordConfirm":"Passwords must match",

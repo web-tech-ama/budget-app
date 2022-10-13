@@ -31,7 +31,7 @@ const Accounts = () => {
         }
 
        await update('bank_account', accountUpdate)
-        alertInfo(` La mise à jour du compte ${value.name}, s’est effectué avec succès `,'success',<IconParkSolidSuccess/>,true)
+        alertInfo(` ${langJson.form.message.success.alertEditAccountPart1} ${value.name}, ${langJson.form.message.success.alertEditAccountPart2}  `,'success',<IconParkSolidSuccess/>,true)
     }
 
     const handelSelect =()=>{
@@ -43,7 +43,7 @@ const Accounts = () => {
             await deleteData('bank_account', id)
         }
         handleCloseModal()
-        alertInfo(` La suppression du compte s’est effectué avec succès `,'success',<IconParkSolidSuccess/>,true)
+        alertInfo(` ${langJson.form.message.success.alertDeleteAccount}  `,'success',<IconParkSolidSuccess/>,true)
         setGetId(0)
         setInputValue('')
     }
