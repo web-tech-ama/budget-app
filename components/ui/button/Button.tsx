@@ -10,9 +10,10 @@ interface ButtonProps extends React.InputHTMLAttributes<HTMLButtonElement>{
     disabled? : boolean
     children?: JSX.Element[] | JSX.Element
     rest?: any
+    padding?:string
 }
 
-const Button = ({classes,color,disabled,text,children,...rest}:ButtonProps) => {
+const Button = ({classes,color,disabled,text,children,padding,...rest}:ButtonProps) => {
     const classname=({clas,styles}: { clas: string | undefined ,styles:string })=> {
        let className :string[] = [styles];
         if (clas != null) {
@@ -21,7 +22,8 @@ const Button = ({classes,color,disabled,text,children,...rest}:ButtonProps) => {
         return className.join('');
     }
     const backgroundColor = {
-        backgroundColor : color
+        backgroundColor : color,
+        padding:padding
     }
     return (
         <button style={backgroundColor} {...rest} type='submit' className={classname({clas: classes, styles: style.btn_reset})} disabled={disabled}>

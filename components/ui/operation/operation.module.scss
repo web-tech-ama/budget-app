@@ -1,0 +1,32 @@
+.operation_table{
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+  overflow: hidden;
+
+  th{
+    padding: 5px;
+    background: #D9D1BB;
+    color:#2b2a28;
+  }
+}
+.increment_color{
+  color: #02bb02;
+}
+.decrement_color{
+  color: #8c0101;
+}
+.operation_decrement,.operation_increment{
+  border-bottom: 1px solid rgba(243, 224, 177, 0.56);
+  td{
+    padding: 5px;
+  }
+}
+.operation_increment{
+  background: rgba(0, 128, 0, 0.06);
+
+}
+.operation_decrement{
+  background: rgba(255, 0, 0, 0.04);
+
+}

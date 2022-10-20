@@ -1,9 +1,17 @@
 
 
 export  interface Operation {
-    operationDate :Date
-    type :string
+    id?:number
+    bank_account_id?:number
+    amount:number
+    operation_date :Date
+    operation_type :string
     recurring :boolean
+    payment_mode?:string
+    increment_and_decrement:boolean
+    category_id?:number
+    category?:{id:number,name:string}| undefined
+    bank_account?:{id:number,name:string}
 
 }
 
@@ -18,6 +26,8 @@ export  interface Operation {
 
  export  interface Category {
      name :string
+     id?:number
+     user_name?:string
 
  }
 

@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useCallback, useEffect} from 'react';
 import styles from "@/components/ui/alert/alert.module.scss";
 import {Classes} from "@/utils/classes";
 interface AlertProps {
@@ -13,21 +13,27 @@ const Alert = ({message,icon,type,isDefaultShown = false, timeout = 2500}:AlertP
     const [isLeaving, setIsLeaving] = React.useState<boolean>(false);
     let timeoutId: any = null;
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    const closeAlert=()=>{
+
+    const closeAlert =useCallback(()=>{
         setIsLeaving(true);
         timeoutId = setTimeout(()=>{
-            setIsLeaving(false);
-            setIsShown(false);
+            if (type){
+                setIsLeaving(false);
+                setIsShown(false);
+                sessionStorage.removeItem(type)
+            }
+
         },timeout)
 
-    }
+    },[ type,timeoutId])
     useEffect(()=>{
         setIsShown(true);
         closeAlert()
         return ()=>{
             clearTimeout(timeoutId)
         }
-    },[ isDefaultShown, timeout, timeoutId])
+
+    },[closeAlert,isDefaultShown, timeout, timeoutId])
     const arrayClass =[styles.alert ,isLeaving?styles.leaving:null]
 
     const alertStyle={

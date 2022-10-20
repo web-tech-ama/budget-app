@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/icons/icons";
 
 
-interface FormOperation {
+interface bankAccountProps {
  handleSubmitForm :  SubmitHandler<FieldValues>
     edit?: boolean
 
@@ -20,7 +20,7 @@ interface FormOperation {
     id?: number| undefined
 }
 
-const BankAccountForm: React.FC<FormOperation> =  ({handleSubmitForm,handleDelete,edit,id}) => {
+const BankAccountForm: React.FC<bankAccountProps> =  ({handleSubmitForm,handleDelete,edit,id}) => {
     const {account,langJson}:{account:BankAccount[],langJson:any}=useStore();
 
     const { register, handleSubmit ,reset,formState:{errors,isSubmitting}} = useForm({
