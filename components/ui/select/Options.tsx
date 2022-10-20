@@ -3,6 +3,7 @@ import {Controller,  FieldValues, ControllerRenderProps, useForm} from 'react-ho
 import styles from '@/components/ui/select/select.module.scss'
 import {Classes} from "@/utils/classes";
 import {MaterialSymbolsCheckSmallRounded} from "@/components/ui/icons/icons";
+
 interface OptionsProps {
     name:string
     value: string
@@ -11,12 +12,21 @@ interface OptionsProps {
     clos: Function
     id:number |undefined
     getId: React.Dispatch<React.SetStateAction<number|undefined>>
+    outputControl?:any
+    setFormValue?:any
 
 }
-const Options = ({name,value,inputValue,selectValue,clos,id,getId}:OptionsProps) => {
-    const {  control } = useForm();
-    const handelSelectChange=(value:string,field: ControllerRenderProps<FieldValues, string>)=>{
-        inputValue(field.value = value)
+const Options = ({name,value,inputValue,selectValue,clos,id,getId,outputControl,setFormValue}:OptionsProps) => {
+   const{control}= useForm()
+
+    const handelSelectChange=(value:string,field: ControllerRenderProps<FieldValues, string>,event: React.MouseEvent<HTMLLIElement, MouseEvent>)=>{
+       event.stopPropagation()
+        inputValue(value)
+        field.value = value
+
+        if(setFormValue){
+            setFormValue(name,field.value)
+        }
         getId(id)
         clos()
     }
@@ -25,13 +35,19 @@ const Options = ({name,value,inputValue,selectValue,clos,id,getId}:OptionsProps)
     return (
         <Controller
          name={name}
-         control={control}
+         control={outputControl? outputControl:control}
          render={({field})=>(
-             <li onClick={()=>handelSelectChange(value,field)}  className={Classes(styles_option)} >
-                 <span>{value}</span>
-                 {value === selectValue ? (<span><MaterialSymbolsCheckSmallRounded/></span>):null}
+             <>
+                 <li onClick={(event)=>handelSelectChange(value,field,event)}  className={Classes(styles_option)} >
+                     <span>{value}</span>
+                     {value === selectValue ? (<span><MaterialSymbolsCheckSmallRounded/></span>):null}
 
-             </li>
+                 </li>
+
+             </>
+
+
+
          )}
         />
     );

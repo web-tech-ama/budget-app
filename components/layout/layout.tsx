@@ -7,13 +7,21 @@ import {useStore} from "@/context/StroeContext";
 
 export default function Layout({ children }:{children: React.ReactNode}) {
     const {alerts}=useStore()
+    const getSessionAlert=()=>{
+       const alt = sessionStorage.getItem(alerts.type)
+        if (alt){
+            return JSON.parse(alt)
+        }
+    }
+
 
     return (
         <>
             <div className={styles.grid_container}>
-                { alerts.active &&(
+
+                { getSessionAlert()?.active &&(
                     // @ts-ignore
-                    <Alert type={alerts.type} message={alerts.message} icon={alerts.icon}/>
+                    <Alert type={getSessionAlert().type} message={getSessionAlert().message} icon={alerts.icon}/>
                 )
 
                 }

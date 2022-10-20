@@ -8,13 +8,48 @@
 
 
   }
+  .title_center{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0.9em;
+	margin-bottom: 1em;
+
+  }
+  .button_section{
+
+	gap: 2em;
+  }
+
 }
+
+.section_bg{
+  background: #4f4c42;
+  width: 100%;
+  box-shadow: $neumorphism-box-shadow-black;
+}
+
 @include md{
+	.operation_main{
+	  display: flex;
+	  flex-wrap: wrap;
+	  justify-content: space-between;
+
+	}
+  	.operation_card{
+	  border-radius: 2em;
+	  background: #4f4c42;
+	  box-shadow: $neumorphism-box-shadow-black;
+	}
   .bank_account_and_chart{
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
 
+  }
+  .button_section{
+	display: flex;
+	gap: 2em;
   }
 }
 

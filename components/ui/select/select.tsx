@@ -4,7 +4,7 @@ import {Classes} from "@/utils/classes";
 import {BiChevronExpand} from "@/components/ui/icons/icons";
 interface SelectProps{
     label:string
-    handelSelect: React.MouseEventHandler<HTMLButtonElement>
+    handelSelect: any
     children: JSX.Element[] | JSX.Element
     inputValue:string
     isSelect:boolean
@@ -18,11 +18,12 @@ const Select = ({label,handelSelect,children,isSelect,inputValue,customClass}:Se
 
     const main_option:(string|null)[] =[ styles.main_option , isSelect? styles.main_option_open:styles.main_option_close]
 
+
     return (
         <section className={styles.select}>
             <h5 className={styles.label}>{label}</h5>
             <p>
-                <button onClick={handelSelect} className={styles.input}>
+                <button onClick={(e)=>handelSelect(e.preventDefault())} className={styles.input}>
                     <span>{inputValue}</span>
 
                     <span><BiChevronExpand/></span>

@@ -1,5 +1,5 @@
 import { createClient } from '@supabase/supabase-js'
-import { log } from 'console'
+
 
 
 
@@ -50,7 +50,7 @@ export const update=async (table:string,payload:{})=>{
         .update(
             payload,
         )
-                
+
     if (error) {
         console.log(error.message);
         throw error;
@@ -86,12 +86,13 @@ export const dataChange = (table:string,channel:string,event:string,func:Functio
         .channel(channel)
         .on('postgres_changes', { event: event, schema: 'public',table:table }, (payload:any) => {
             if(event === 'INSERT'){
+
                 func((current:any)=>[...current,payload.new])
             }
             if(event === 'UPDATE'){
                 func((current:any)=>[...current.map((item: { id: any }) => item.id === payload.new.id ? item = payload.new : item )])
             }
-            if(event === 'DELETE'){                
+            if(event === 'DELETE'){
                 func((current:any)=>[...current.filter((item: { id: any }) => item.id !== payload.old.id)])
             }
         })
