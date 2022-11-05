@@ -17,47 +17,40 @@ export const StoreContextProvider=({children}:Props)=>{
     const [loading, setLoading] = useState(true)
     const [selectLang, setSelectLang] = useState<string>('')
     const [langJson,setLangJson]=useState({})
-    const mounted = useRef(true);
 
     const {user}=useAuth()
-    const fetch =useCallback(async ()=>{
-        if (selectLang !==''){
-            localStorage.setItem('lang',selectLang)
-        }
-        let localLang = localStorage.getItem('lang')
-
-        if (user){
-            const userinfo=  await fetchData('user_info','*')
-            const bank_account = await fetchData('bank_account',`*`)
-            const category = await fetchData('category',`*`)
-            const operations = await  fetchData('operation',`*`)
-
-            setOperation(operations)
-            setCategory(category)
-            setUserData(userinfo)
-            setAccount(bank_account)
-        }
-        if (localLang ){
-            setSelectLang(localLang)
-        }
-
-        setLangJson(await multilingual() )
-
-
-
-        setLoading(false)
-
-    },[user,selectLang,fetchData,setOperation])
 
     useEffect(()=>{
-        if(mounted.current){
             (async ()=>{
-                await fetch()
-            })()
-            mounted.current = false
-        }
+                if (selectLang !==''){
+                    localStorage.setItem('lang',selectLang)
+                }
+                let localLang = localStorage.getItem('lang')
 
-    },[fetch])
+                if (user){
+                    const userinfo=  await fetchData('user_info','*')
+                    const bank_account = await fetchData('bank_account',`*`)
+                    const category = await fetchData('category',`*`)
+                    const operations = await  fetchData('operation',`*`)
+
+                    setOperation(operations)
+                    setCategory(category)
+                    setUserData(userinfo)
+                    setAccount(bank_account)
+                }
+                if (localLang ){
+                    setSelectLang(localLang)
+
+                }
+
+                setLangJson(await multilingual() )
+
+
+
+                setLoading(false)
+            })()
+
+    },[selectLang, user])
     useEffect(()=>{
         dataChange('bank_account','db_changes_account','INSERT',setAccount)
         dataChange('bank_account','db_update_account','UPDATE',setAccount)

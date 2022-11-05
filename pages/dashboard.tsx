@@ -19,10 +19,11 @@ import {BankAccount, Category, Operation, Userinfo} from "@/type/interface";
 import {insert, update} from "@/utils/supabaseClient";
 import OperationTable from "@/components/ui/operation/operationTable";
 import OperationItem from "@/components/ui/operation/operationItem";
+import {MdiBankTransfer, MdiCreditCardPlusOutline} from "@/components/ui/icons/icons";
 
 const Dashboard = () => {
 
-    const {operation,userData,account, alertInfo,langJson,category}:{operation:Operation[],userData:Userinfo[],account:BankAccount[], alertInfo:any,langJson:any,category:Category[]}=useStore();
+    const {operation,userData,account,langJson,category}:{operation:Operation[],userData:Userinfo[],account:BankAccount[],langJson:any,category:Category[]}=useStore();
     const [getId ,setGetId]=useState<number|undefined>(0)
     const [isSelect, setIsSelect]= useState<boolean>(false)
     const [inputValue , setInputValue]=useState<string>('')
@@ -56,7 +57,7 @@ const Dashboard = () => {
             ...value,
             category_id:getCategoryId,
             operation_date:new Date(),
-            increment_and_decrement: value.operation_type =='revenu' ? true : false,
+            increment_and_decrement: value.operation_type ==='revenu' ? true : false,
             bank_account_id:getId
 
 
@@ -89,8 +90,8 @@ const Dashboard = () => {
                 <div className={styles.title_center}>
                     <h1>{UpperCase(langJson.menu.dashboard)}</h1>
                     <div  className={styles.button_section}>
-                        <Button onClick={handleModal} text="New Tansfer"></Button>
-                        <Button onClick={handleModal} text="New Operation"></Button>
+                        <Button onClick={handleModal} text={langJson.dashboardLabel.NewTransfer}><MdiBankTransfer/></Button>
+                        <Button onClick={handleModal} text={langJson.dashboardLabel.NewOperation}><MdiCreditCardPlusOutline/></Button>
                     </div>
                 </div>
 
@@ -139,7 +140,7 @@ const Dashboard = () => {
             </Modal>
 
 
-            <Modal title={langJson.form.title.userInfo} openModal={userData.length !==0?false:true}>
+            <Modal title={langJson.form.title.userInfo} openModal={userData.length ===0?true:false}>
                 <SetupForm/>
             </Modal>
 

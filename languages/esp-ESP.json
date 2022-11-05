@@ -61,6 +61,15 @@
   "dashboardLabel": {
     "revenue": "Ingresos",
     "account" :"cuenta",
-    "totalBudget": "Presupuesto total"
+    "totalBudget": "Presupuesto total",
+    "NewOperation": "Nueva operación",
+    "NewTransfer": "Nueva transferencia",
+    "operation" : {
+      "account": "Cuenta",
+      "amount": "Cantitad",
+      "paymentMethod": "Método de pago",
+      "category": "Categoría",
+      "type": "Tipo"
+    }
   }
 }

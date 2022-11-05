@@ -61,7 +61,16 @@
   "dashboardLabel": {
     "revenue": "Revenus",
     "account" :"compte",
-    "totalBudget": "Budget total"
+    "totalBudget": "Budget total",
+    "NewOperation": "Nouvel opération",
+    "NewTransfer": "Nouveau virement",
+    "operation" : {
+      "account": "Compte",
+      "amount": "Montant",
+      "paymentMethod": "Mode de paiement",
+      "category": "Catégorie",
+      "type": "Type"
+    }
   }
 
 }
