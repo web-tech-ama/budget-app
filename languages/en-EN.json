@@ -9,7 +9,10 @@
       "registerLabel":"Registration",
       "nextLabel":"Next",
       "dateOfBirthLabel":"Date of Birthday",
-      "accountListLabel": "List of accounts"
+      "accountListLabel": "List of accounts",
+      "addCategory": "Add a category",
+      "categoryLabel" : "Your category",
+      "addLabel": "Add"
     },
     "title": {
       "loginTitle": "Budget | Connection !",
@@ -69,7 +72,12 @@
       "amount": "Amount",
       "paymentMethod": "Payment Method",
       "category": "Category",
-      "type": "Type"
+      "type": "Type",
+      "recurring": "Recurring ?",
+      "expense": "expense",
+      "revenue": "revenue",
+      "card" : "card",
+      "sampling": "sampling"
     }
   }
 }

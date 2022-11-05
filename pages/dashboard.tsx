@@ -119,7 +119,7 @@ const Dashboard = () => {
                     </OperationTable>
                 </div>
             </section>
-            <Modal title='New Operation' close handelClose={handleModal} openModal={openModal}>
+            <Modal title={langJson.dashboardLabel.NewOperation} close handelClose={handleModal} openModal={openModal}>
                 <>
                     <div>
                         <Select isSelect={isSelect} inputValue={inputValue} label={langJson.form.label.accountListLabel} handelSelect={handelSelect}>
