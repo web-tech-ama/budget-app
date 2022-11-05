@@ -129,3 +129,16 @@ export function IcBaselineTrendingDown(props: SVGProps<SVGSVGElement>) {
         <svg width="1em" height="1em" viewBox="0 0 24 24" {...props}><path fill="currentColor" d="m16 18l2.29-2.29l-4.88-4.88l-4 4L2 7.41L3.41 6l6 6l4-4l6.3 6.29L22 12v6z"></path></svg>
     )
 }
+
+export function MdiBankTransfer(props: SVGProps<SVGSVGElement>) {
+    return (
+        <svg width="1em" height="1em" viewBox="0 0 24 24" {...props}><path fill="currentColor" d="M15 14v-3h3V9l4 3.5l-4 3.5v-2h-3m-1-6.3V9H2V7.7L8 4l6 3.7M7 10h2v5H7v-5m-4 0h2v5H3v-5m10 0v2.5l-2 1.8V10h2m-3.9 6l-.6.5l1.7 1.5H2v-2h7.1m7.9-1v3h-3v2l-4-3.5l4-3.5v2h3Z"></path></svg>
+    )
+}
+
+
+export function MdiCreditCardPlusOutline(props: SVGProps<SVGSVGElement>) {
+    return (
+        <svg width="1em" height="1em" viewBox="0 0 24 24" {...props}><path fill="currentColor" d="M21 18h3v2h-3v3h-2v-3h-3v-2h3v-3h2v3M19 8V6H3v2h16m0 4H3v6h11v2H3a2 2 0 0 1-2-2V6c0-1.11.89-2 2-2h16a2 2 0 0 1 2 2v7h-2v-1Z"></path></svg>
+    )
+}

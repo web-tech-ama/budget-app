@@ -61,6 +61,15 @@
   "dashboardLabel": {
     "revenue": "Revenues",
     "account" :"account",
-    "totalBudget": "Total budget"
+    "totalBudget": "Total budget",
+    "NewOperation": "New Operation",
+    "NewTransfer": "New Transfer",
+    "operation" : {
+      "account": "Account",
+      "amount": "Amount",
+      "paymentMethod": "Payment Method",
+      "category": "Category",
+      "type": "Type"
+    }
   }
 }
