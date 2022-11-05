@@ -24,7 +24,7 @@ interface OperationProps{
 
 const OperationForm = ({handleSubmitForm,setId}:OperationProps) => {
     const {user} = useAuth();
-    const {category}:{category:Category[]}=useStore()
+    const {category, langJson}:{category:Category[], langJson:any}=useStore()
     const [getId ,setGetId]=useState<number|undefined>(0)
 
     const [isSelect, setIsSelect]= useState<boolean>(false)
@@ -66,40 +66,40 @@ const OperationForm = ({handleSubmitForm,setId}:OperationProps) => {
     return (
         <>
             <form className={styles.login_form} onSubmit={handleSubmit(handleSubmitForm)} >
-                <Input type='text' placeholder='amount' {...register('amount')}
+                <Input type='text' placeholder={langJson.dashboardLabel.operation.amount} {...register('amount')}
                        error={errors.amount?.message}
                 />
-                <Input type='checkbox' label='recurring' {...register('recurring')}
+                <Input type='checkbox' label={langJson.dashboardLabel.operation.recurring} {...register('recurring')}
                        error={errors.recurring?.message}
                 />
-                <Select label='payment_mode' handelSelect={handelSelect} inputValue={inputValue} isSelect={isSelect}>
-                    {[{mode:'carte'},{mode: 'prélevement'}].map((value,index)=>(
+                <Select label={langJson.dashboardLabel.operation.paymentMethod} handelSelect={handelSelect} inputValue={inputValue} isSelect={isSelect}>
+                    {[{mode:langJson.dashboardLabel.operation.card},{mode: langJson.dashboardLabel.operation.sampling}].map((value,index)=>(
                         <Options setFormValue={setValue} outputControl={control} name='payment_mode' key={index} value={value.mode} inputValue={setInputValue} selectValue={inputValue} clos={handelSelect} id={index} getId={setGetId}/>
                     ))}
 
                 </Select>
-                <Select label='operation_type' handelSelect={handelOperationSelect} inputValue={operationInputValue} isSelect={operationIsSelect}>
-                    {[{mode:'revenu'},{mode: 'depense'}].map((value,index)=>(
+                <Select label={langJson.dashboardLabel.operation.type} handelSelect={handelOperationSelect} inputValue={operationInputValue} isSelect={operationIsSelect}>
+                    {[{mode:langJson.dashboardLabel.operation.revenue},{mode: langJson.dashboardLabel.operation.expense}].map((value,index)=>(
                         <Options setFormValue={setValue} outputControl={control} name='operation_type' key={index} value={value.mode} inputValue={setOperationInputValue} selectValue={operationInputValue} clos={handelOperationSelect} id={index} getId={setGetId}/>
                     ))}
 
                 </Select>
-                <Select label='category_id' handelSelect={handelCategorySelect} inputValue={categoryInputValue} isSelect={categoryIsSelect}>
+                <Select label={langJson.dashboardLabel.operation.category} handelSelect={handelCategorySelect} inputValue={categoryInputValue} isSelect={categoryIsSelect}>
                     <>
                         {category.map((value)=>(
                             <Options  setFormValue={setValue} outputControl={control} name='category_id' key={value.id} value={value.name} inputValue={setCategoryInputValue} selectValue={categoryInputValue} clos={handelCategorySelect} id={value.id} getId={setId}/>
                         ))}
-                        <Button onClick={(e)=>handleCloseModal(e.preventDefault())} padding='0.3em' text='Ajouter Categorie'></Button>
+                        <Button onClick={(e)=>handleCloseModal(e.preventDefault())} padding='0.3em' text={langJson.form.label.addCategory}></Button>
                     </>
 
 
                 </Select>
-                <Button disabled={isSubmitting} text='Enregistrer'>
+                <Button disabled={isSubmitting} text={langJson.form.label.saveLabel}>
                     <MaterialSymbolsLibraryAddCheckSharp/>
                 </Button>
 
             </form>
-            <Modal title='add category' close={true} handelClose={handleCloseModal} openModal={openModal}>
+            <Modal title={langJson.form.label.addCategory} close={true} handelClose={handleCloseModal} openModal={openModal}>
                 <CategoryForm handleSubmitForm={handleSubmitCat}/>
 
             </Modal>

@@ -9,7 +9,10 @@
       "registerLabel":"Inscription",
       "nextLabel":"Suivant",
       "dateOfBirthLabel":"Date de naissance",
-      "accountListLabel": "Liste des comptes"
+      "accountListLabel": "Liste des comptes",
+      "addCategory": "Ajouter une catégorie",
+      "categoryLabel" : "Votre catégorie",
+      "addLabel": "Ajouter"
     },
     "title": {
       "loginTitle": "Budget | Connexion !",
@@ -69,7 +72,12 @@
       "amount": "Montant",
       "paymentMethod": "Mode de paiement",
       "category": "Catégorie",
-      "type": "Type"
+      "type": "Type",
+      "recurring": "Récurrent ?",
+      "expense": "dépense",
+      "revenue": "revenu",
+      "card" : "carte",
+      "sampling": "prélèvement"
     }
   }
 
